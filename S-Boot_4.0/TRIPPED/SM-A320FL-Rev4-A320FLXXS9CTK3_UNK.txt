@@ -1,0 +1,86 @@
+Samsung S-Boot 4.0 for SM-A320FL (Nov  3 2020 - 13:40:15 35605315)
+EXYNOS7870 EVT 0.5 (Base on ARM CortexA53)
+2020MB / 0MB / Rev 4 / A320FLXXS9CTK3 / (PKG_ID 0xe7870205) / LOT_ID N5CY6 / SHIP /SW_RST (0x20000000)
+__if_pmic_rev_init - MUIC API is not ready!
+MON: 0x6b(5)
+MON[0] = (5)[0x0c, 0x03]
+MON[1] = (6)[0x21, 0x3b]
+MON[2] = (7)[0x22, 0x20]
+MON[3] = (0)[0x29, 0x85]
+MON[4] = (1)[0x2a, 0x85]
+MON[5] = (2)[0x1b, 0x36]
+MON[6] = (3)[0x1d, 0x3c]
+MON[7] = (4)[0x0a, 0x00]
+RTC 0x3 = 0xf4
+RTC 0x19 = 0xb7
+[MUIC] muic_register_s2mu004_apis
+Try 0 : [MUIC] muic_id:0x038.
+ -> matched(s2mu004).
+MUIC rev = S2MU004(56), evt8
+init_multi_microusb_ic Active MUIC 0x24
+s2mu004_muic_get_adc_value: ADC:0x1f
+s2mu004_init_microusb_ic: MUIC: CONTROL writing success.
+s2mu004_init_microusb_ic: MUIC: CONTROL:0x17
+s2mu004_init_microusb_ic: MUIC: TIMING3: 0x8d
+s2mu004_muic_get_attached_device: INT[1:0x00, 2:0x00]
+s2mu004_muic_get_attached_device: DEV[1:0x40, 2:0x00, 3:0x00]
+ccic_register_s2mu004:
+ccic_is_s2mu004:
+ccic_is_s2mu004: reg:b2 - val:00 ret:00
+get_vbvolt: apple: 0x07, dev3: 0x00
+get_vbvolt: vbvolt: 0x02
+ccic_register_s2mu004:  BEFORE VBUS(2)
+s2mu004_ccic_set_normal_mode:
+s2mu004_ccic_set_normal_mode:  27 00 
+s2mu004_ccic_check_pd_ta: POWER NEGO CHECK!
+s2mu004_ccic_check_pd_ta: S2MU004_REG_RID at FIRST : 0
+s2mu004_ccic_set_normal_mode:
+s2mu004_ccic_set_normal_mode:  27 10 
+s2mu004_ccic_check_jig: S2MU004_REG_RID at SECOND : 0
+s2mu004 found.
+mach_board_initialize: Active ccic device.
+s2mu004_muic_get_attached_device: INT[1:0x00, 2:0x00]
+s2mu004_muic_get_attached_device: DEV[1:0x40, 2:0x00, 3:0x00]
+ifconn_init: CCIC Mode
+ifconn_get_jig_status: CCIC Mode
+ccic_read_adc:
+s2mu004_read_adc:
+s2mu004_read_adc: RID = 00(RID_0)
+ifconn_is_ccic_jig_device: rid=00
+ccic_wait_auth:
+s2mu004_muic_get_adc_value: ADC:0x1f
+ccic_read_adc:
+s2mu004_read_adc:
+s2mu004_read_adc: RID = 00(RID_0)
+board_ccic_check_uart: jig_adc=1f, cc_adc=00
+ifconn_com_to_open:
+s2mu004_set_muic_uart_early: MUIC: MAN_SW1[0x00]
+load Secure Payload done.
+
+Chip ID : 0774f64e6178
+EL3 Monitor information:
+Cubic-OPM1-8518R1-1-g2696 2696a61 519f442 f4955a2 8a29475 198c288 zazhang aarch64-linux-gnu-gcc (crosstool-NG linaro-1.13.1-4.8-2013.09 - Linaro GCC 201
+
+mmc_init
+cardtype: 0x00000007
+SB_MMC_HS_52MHZ_1_8V_3V_IO
+mmc->card_caps: 0x00000f11
+mmc->host_caps: 0x00000f11
+!!!Enter 8 Bit DDR mode.!!!
+[mmc] capacity = 30777344
+
+
+MODEL_NAME:{{SM-A320FL}}
+eMMC_SERIAL_NUMBER:{{11010034303030373300DC5A496FC311}}
+
+
+[Debug Info.]
+   S-BOOT : VERSION_-+J0
+ SecureOS : 20 (MB)
+- read_bl1
+blk_bread_bootsector: MMC mode
+Verify_Signature_With_Signingtype 0x45a20130 3740@0x45a10000, 256@0x45a20030
+pit_check_signature (PIT) valid.
+PARAM ENV VERSION: v1.0..
+ATAG_CMDLINE: 118 54410009 'console=ram loglevel=4 sec_debug.level=0 sec_watchdog.sec_pet=5 androidboot.debug_level=0x4f4c androidboot.ap_serial=0x0774F64E6178 sec_debug.sjl=1 ess_setup=0x46000000 tima_log=0x200000@0x52a00000 sec_avc_log=0x40000@0x47002000 sec_tsp_log=0x40000@0x47044000 s3cfb.bootloaderfb=0x67000000 lcdtype=4390914 consoleblank=0 vmalloc=384m sec_debug.reset_reason=6 sec_reset.reset_reason=6 ehci_hcd.park=3 oops=panic pmic_info=3 ccic_info=1 cordon=4e331c52c8e058db5d67b3202b84dc07 connie=SM-A320FL_OPEN_EUR_fdf228114c1b35f53e403d208f51cec2 fg_reset=0 androidboot.emmc_checksum=3 androidboot.sales.param.offset=7340572 sales_code=PHN androidboot.odin_download=1 androidboot.bootloader=A320FLXXS9CTK3 androidboot.selinux=enforcing androidboot.security_mode=1526595584 androidboot.ucs_mode=0 androidboot.hw_rev=4 androidboot.hardware=samsungexynos7870 androidboot.warranty_bit=1 androidboot.wb.hs=030c sec_debug.bin=A androidboot.hmac_mismatch=0 androidboot.sec_atd.tty=/dev/ttySAC2 androidboot.serialno=3300dc5a496fc311 snd_soc_core.pmdown_time=1000 reserve-fimc=0 firmware_class.path=/vendor/firmware factory_mode=0'
+param logs: R,N,R,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,R,R,N,N,N,N,N,N,N,R,R,N,

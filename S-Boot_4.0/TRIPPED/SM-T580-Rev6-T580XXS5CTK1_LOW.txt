@@ -1,0 +1,309 @@
+Samsung S-Boot 4.0 for SM-T580 (Nov  3 2020 - 16:34:58 35611958)
+EXYNOS7870 EVT 0.5 (Base on ARM CortexA53)
+2020MB / Rev 6 / T580XXS5CTK1 / (PKG_ID 0xe7870205) / LOT_ID N7P92 / SHIP /SW_RST (0x20000000)
+__if_pmic_rev_init - MUIC API is not ready!
+MON: 0x66(4)
+MON[0] = (4)[0x0c, 0x03]
+MON[1] = (5)[0x21, 0x3b]
+MON[2] = (6)[0x22, 0x20]
+MON[3] = (7)[0x29, 0x85]
+MON[4] = (0)[0x2a, 0x85]
+MON[5] = (1)[0x1b, 0x36]
+MON[6] = (2)[0x1d, 0x3c]
+MON[7] = (3)[0x0a, 0x00]
+s5p_check_dump_gpr: set sp loading flag
+[MUIC] muic_register_sm5703_apis
+[MUIC] chip_id:0x00 muic_id:0x01 -> matched(sm5703).
+[MUIC] print_init_regs
+ CTL:1e IM1:dc IM2:00 TM1:03 TM2:00 T1:00 T2:00 T3:00 MS1:01 MS2:00 RST:00 RD1:00 RD2:04 RD3:00 RD4:00 LDO1:55
+
+sm5703_reset_microusb_ic t1:00 t2:00 t3:00
+[MUIC] RESET!!! 
+[MUIC] print_init_regs
+ CTL:1f IM1:00 IM2:00 TM1:00 TM2:00 T1:00 T2:00 T3:00 MS1:00 MS2:00 RST:00 RD1:00 RD2:04 RD3:00 RD4:01 LDO1:55
+
+[MUIC] rev = SM5703(1)
+init_multi_microusb_ic Active MUIC 0x01
+[MUIC] init MANUAL_SW1: 0x6d
+[MUIC] init CONTROL:0x1f
+[MUIC] init CONTROL:0x17
+[MUIC] init RSVD_ID4: 0x00
+[MUIC] set_muic_uart_early CONTROL1: 01
+load Secure Payload done.
+EL3 Monitor information:
+Cubic-NRD90M-6A13R1-1-gfc fc7e1dd fdd5ca6 51a7e26 221adc6 8cd17e3 songyi aarch64-linux-gnu-gcc (crosstool-NG linaro-1.13.1-4.8-2013.09 - Linaro GCC 201
+
+MMC Init
+MMC0 400Khz 1 bit mode
+cardtype: 0x00000007
+mmc->card_caps: 0x00000f11
+mmc->host_caps: 0x00000f11
+!!!Enter 8 Bit DDR mode.!!!
+MMC0 52Mhz 8bit DDR mode
+MMC0 capacity = 61071360
+MMC0 SERIAL NUMBER: 1101003530303037330008EFD2EB7501
+MMC0 vendor: 0x11
+MMC0 PNM: 0x353030303733
+MMC0 MD: 2018 7
+MMC0 FW: 0x3
+
+[Debug Info.]
+   S-BOOT : VERSION_-+J0
+ SecureOS : 20 (MB)
+- read_bl1
+blk_bread_bootsector: MMC mode
+Verify_Signature_With_Signingtype 0x45a20130 3608@0x45a10000, 256@0x45a20030
+pit_check_signature (PIT) valid.
+PARAM ENV VERSION: v1.0..
+blk_bread_bootsector: MMC mode
+blk_getUID: MMC mode
+initialize_ddi_data: usable! (1:0xe), warranty reason : (0x030c)
+MAGIC_RAM_BASE: 66262564, MAGIC_RAM_BASE2: 0, ompin: 0
+[ldfw] Pass LDFW partition!
+[ldfw] read whole CM partition from the storage
+blk_bread_bootsectorB: MMC mode in 2nd partition
+MMC0 emmc_bootpart_2_open: 2nd partition open
+MMC0 emmc_bootpart_2_close: 2nd partition close
+ldfw: 0th ldfw's version 0x30170926 name : CryptoManagerV30
+ldfw: 1th ldfw's version 0x20160901 name : fmp_fw_V20
+ldfw: 2th ldfw's version 0x11160323 name : drm_fw
+ldfw: 3th ldfw's version 0x22161012 name : srpmb_fw
+ldfw: 4th ldfw's version 0x20150828 name : tail_fw
+ldfw: init ldfw(s). whole ldfws size 0x255110
+[ldfw] try to init 4 ldfw(s). except 0 ldfw 4 ldfw(s) have been inited done.
+[mobi_drv] add: 0x43e58f80, size: 15445
+MobiCore IDLE flag = 0
+MobiCore Driver loaded and RTM IDLE!
+[OTP] 27 bit read: 0x19
+[OTP] 22 bit read: 0x0
+[OTP] 21 bit read: 0x0
+[OTP] 23 bit read: 0x1
+[OTP] 26 bit read: 0x1
+[OTP] NANTIRBK0 bit reading: start
+[OTP] NANTIRBK0: 5 bit
+[OTP] 28 bit read: 0x1
+[OTP] 29 bit read: 0x0
+[OTP] 30 bit read: 0x1
+[OTP] 25 bit read: 0x1
+[OTP] ETC value: 0
+[OTP] ETC value: 0
+[OTP] ETC value: 0
+[OTP] ETC value: 0
+[EFUSE] SMC Read the 0x0 ...
+[EFUSE] SMC Read Count value: 5
+[EFUSE] SMC Read the 0x1 ...
+[EFUSE] SMC Read Count value: 1
+[EFUSE] SMC Read the 0x2 ...
+[EFUSE] SMC Read Count value: 0
+[EFUSE] SMC Read the 0x3 ...
+[EFUSE] SMC Read Count value: 1
+(1,25) vs (1,25)
+JTAG_LOCK is already enabled in this device.
+[EFUSE] This is commercial device.
+blk_rpmb_open: MMC mode
+MMC0 RPMB emmc_rpmb_open:
+blk_rpmb_read_data: MMC mode
+HMAC compare success
+RPMB: HMAC: 
+
+MMC0 RPMB Get DATA success
+
+initialize_secdata_rpmb: usable! (0x52504d42), 1
+blk_rpmb_close: MMC mode
+MMC0 RPMB emmc_rpmb_close:
+DDR SIZE: 2G (0x80000000)
+szWaferID: N7P92
+nAsv_TABLE: 5
+nAsv_CPUCL0: 7
+nAsv_CPUCL1: 7
+nAsv_G3D: 7
+nAsv_MIF: 7
+nAsv_INT: 7
+nAsv_CAM_DISP: 5
+nAsv_CP: 7
+
+TMU: 33
+set_reset_reason: reason as 6
+update_rcnt: not supported
+store_summarys: stop, no upload mode
+[MUIC] print_init_regs
+ CTL:17 IM1:00 IM2:00 TM1:00 TM2:00 T1:00 T2:00 T3:00 MS1:01 MS2:00 RST:00 RD1:00 RD2:04 RD3:00 RD4:00 LDO1:55
+
+set_float_voltage: battery cv voltage(4350) 0x36
+get_vbvolt: REG_RSVD_ID1: 0x00
+get_vbvolt: vbvolt: 0x00
+[MUIC] attached_device DEV_TYPE1:0x00, 2:0x00, 3:0x00
+[MUIC] attached_device INTR1:0x00, 2:0x00
+fuel_gauge_read_vcell: read = 0x3ac, vbat = 3671
+sm5703_get_charger_status: invalid charger device=0
+set_precharge_current: does not need precharge current
+set_charger_state: CONTROL REG : 0x55
+fuel_gauge_read_vcell: read = 0x3ac, vbat = 3671
+get_vbvolt: REG_RSVD_ID1: 0x00
+get_vbvolt: vbvolt: 0x00
+[MUIC] attached_device DEV_TYPE1:0x00, 2:0x00, 3:0x00
+[MUIC] attached_device INTR1:0x00, 2:0x00
+fuel_gauge_read_vcell: read = 0x3ac, vbat = 3671
+sm5703_get_charger_status: invalid charger device=0
+check_fuelgauge_powered: cnt=15, vcell=3671, chg_state=0
+set_charger_state: CONTROL REG : 0x55
+set_charger_state: CONTROL REG : 0x55
+[MUIC] attached_device DEV_TYPE1:0x00, 2:0x00, 3:0x00
+[MUIC] attached_device INTR1:0x00, 2:0x00
+Initialization_routine: Already F/G initialized(version:0x5)
+fuel_gauge_read_ocv: read = 0x3b0, ocv = 3687
+fuel_gauge_read_vcell: read = 0x3ad, vbat = 3675
+adc_read_temp no temp_adc_table, fix temp = 20
+PMIC_ID(S2MPU05) = 0x02
+PMIC_STATUS1	= 0x1a JIGONB RSVD MRB
+PMIC_STATUS2	= 0x11 RTC60SE RTC1SE
+PMIC_PWRONSRC	= 0x01 PWRON
+PMIC_OFFSRC	= 0x00
+PMIC_INT1	= 0x00
+PMIC_INT2	= 0x11 RTC60S RTC1S
+PMIC_INT3	= 0x00
+PMIC_RTC_CTRL   = 0x02
+PMIC_RTC_SMPL   = 0xc3
+PMIC_RTC_OSC_BIAS_UP   = 0xf0
+PMIC_RTC_OSC_CTRL   = 0xb5
+RTC TIME: 2022-02-24 07:36:16(0x10)AM
+s5p_check_keypad: 0x0
+s5p_check_reboot_mode: INFORM3 = 12345670 ... skip
+PLL_MEM = 902MHz	PLL_MEDIA= 666MHz	PLL_BUS= 799MHz
+[MUIC] attached_device DEV_TYPE1:0x00, 2:0x00, 3:0x00
+[MUIC] attached_device INTR1:0x00, 2:0x00
+board_uart_rustproof muic_jig: 0, pmic_jigonb: 0
+  -user build & not FAC
+  -rustproof mode Enabled
+s5p_check_upload: DL: 4f4c FU: 0
+0x4f4c: MRST enabled
+s5p_check_upload: MAGIC(0x66262564), RST_STAT(0x20000000)
+[MUIC] get_adc_value ADC:1f
+s5p_check_upload: debug level is LO! (fu: 0, mask: 0x0)
+s5p_check_upload: disable dump_gpr
+Disable dumpGPR - f0
+s5p_check_download: 0
+[MUIC] attached_device DEV_TYPE1:0x00, 2:0x00, 3:0x00
+[MUIC] attached_device INTR1:0x00, 2:0x00
+get_vbvolt: REG_RSVD_ID1: 0x00
+get_vbvolt: vbvolt: 0x00
+[MUIC] attached_device DEV_TYPE1:0x00, 2:0x00, 3:0x00
+[MUIC] attached_device INTR1:0x00, 2:0x00
+fuel_gauge_read_vcell: read = 0x3ad, vbat = 3675
+sm5703_get_charger_status: invalid charger device=0
+check_pm_status: normal reset, do not enter LPM mode.
+scr_draw_image: draw 'logo.jpg'...
+read 'logo.jpg'(76206) completed.
+LoadJPEG took 166 msec
+dsim_probe was called
+dsim_reg_set_config: DSIM_CONFIG_CLKLANE_STOP_START enable
+calculated HS clock is 979 Mhz. p(3), m(226), s(1)
+INFO:DSIM:dsim_reg_enable_pll:dsim pll stable
+hx8279d_read_id: should retry once.
+dsim_reg_rx_handler: 30800002
+dsi_read: fail. fc, 1, 0
+hx8279d_read_id: fc retry: 1
+dsi_read: fc: 82, 
+dsi_read: fd: 79, 
+dsi_read: b1: 03, 
+82, 79, 3, 0, 0x827903
+BOE2 PANEL.
+mipi-dsi driver(VIDEO mode) has been probed. lcdtype: 827903
+decon-int: ver0, max win3, video mode, sw trigger
+single dsi mode
+decon0 registered successfully
+[MUIC] attached_device DEV_TYPE1:0x00, 2:0x00, 3:0x00
+[MUIC] attached_device INTR1:0x00, 2:0x00
+Initialization_routine: Already F/G initialized(version:0x5)
+fuel_gauge_read_ocv: read = 0x3b0, ocv = 3687
+fuel_gauge_read_vcell: read = 0x3aa, vbat = 3664
+adc_read_temp no temp_adc_table, fix temp = 20
+AST_POWERON..
+blk_bwrite: MMC mode
+blk_bwrite: MMC mode
+DMV: Successfully informed TZ of boot mode: Normal
+load_kernel: loading boot image from 122880..
+kernel size = 0x165c000, ramdisk size = 0x1de000
+dt_size:344064, dt_actual:344064
+[Fchandler]Jenkins build #52
+Verify_Signature_With_Signingtype 0x45a20130 25749536@0x4007f800, 256@0x45a20030
+Kernel Image
+Verify_Signature_With_Signingtype: failed.(-18022398)
+pit_check_signature (BOOT) invalid.
+[TIMA trusted boot]: SEANDROID ENFORCING
+Set invalid sign flag
+update_image_status_auth: Status for BOOT image is already custom
+ No need to update kernel type.
+challenge_size is 90 144
+[CC MODE] Failed. Invalid Magic
+[EFUSE] warranty bit is already set.
+tboot ctx base: 0x45a20238
+SMC Num = 0x83000001
+
+mobismc success!!!
+Pass. DTBH size is smaller than a page.
+
+<dtbh_header Info>
+    magic:0x48425444, version:0x00000002, num_entries:0x00000003
+
+<device info>
+        chip_id: 0x00001ebe
+    platform_id: 0x000050a6
+     subtype_id: 0x217584da
+         hw_rev: 0x00000006
+
+dt_entry[02]
+        chip_id: 0x00001ebe
+    platform_id: 0x000050a6
+     subtype_id: 0x217584da
+         hw_rev: 0x00000005
+     hw_rev_end: 0x000000ff
+         offset: 0x0001c800
+       dtb size: 0x0001c000
+Selected entry hw_ver : 6
+dt_entry of hw_rev 5 is loaded at 0x48000000.(114688 Bytes)
+[OTP] 25 bit read: 0x1
+DDI value :0x0000000e
+blk_set_boot_wp: MMC mode
+MMC0 Set write protection (boot partition)
+[eMMC] : Set WP for CPEFS, Start : 0x00010000, Length : 0x00004000
+blk_set_user_wp: MMC mode
+MMC0 wp_group_size = 0x2000
+MMC0 Set write protection (user partition)
+Warranty Bit Set - Blowing KAP_VIOLATION_FUSE
+blk_bwrite: MMC mode
+KAP status = 5afe0003
+ATAG_CORE: 5 54410001 0 0 0
+ATAG_MEM: 4 54410002 20000000 40000000
+ATAG_MEM: 4 54410002 1E400000 60000000
+ATAG_MEM: 4 54410002 20000000 80000000
+ATAG_MEM: 4 54410002 20000000 A0000000
+blk_getUID: MMC mode
+ATAG_SERIAL: 4 54410006 330008ef d2eb7501
+ATAG_INITRD2: 4 54420005 43000000 1ddb7b
+ATAG_REVISION: 3 54410007 6
+check_secure_jtag: smc cmd is not supported for this model
+check_rustproof [0,0] On
+blk_getUID: MMC mode
+blk_getUID: MMC mode
+ucs flag is Unknown
+ucs flag : 00 00 00 00
+sec_debug_rooting_info: ddi set and warranty set
+ATAG_CMDLINE: 10d 54410009 'console=ram loglevel=4 sec_debug.level=0 sec_watchdog.sec_pet=5 androidboot.debug_level=0x4f4c androidboot.ap_serial=0x000000000000 sec_debug.sjl=1 ess_setup=0x46000000 tima_log=0x200000@0x52a00000 sec_avc_log=0x40000@0x47002000 sec_tsp_log=0x40000@0x47044000 s3cfb.bootloaderfb=0x67000000 lcdtype=8550659 consoleblank=0 vmalloc=384m sec_debug.reset_reason=6 sec_reset.reset_reason=6 ehci_hcd.park=3 oops=panic pmic_info=19 cordon=b777f8ae4f7a27e3b63517e4b592a6dc connie=SM-T580_OPEN_EUR_b4a3233c6be5413cead8d567cafbfa70 androidboot.emmc_checksum=3 androidboot.sales.param.offset=7340572 sales_code= androidboot.odin_download=1 androidboot.bootloader=T580XXS5CTK1 androidboot.selinux=enforcing androidboot.security_mode=1526595584 androidboot.ucs_mode=0 androidboot.revision=6 androidboot.hardware=samsungexynos7870 androidboot.warranty_bit=1 androidboot.wb.hs=030c sec_debug.bin=A androidboot.hmac_mismatch=0 androidboot.sec_atd.tty=/dev/ttySAC2 androidboot.serialno=330008efd2eb7501 snd_soc_core.pmdown_time=1000 reserve-fimc=0 firmware_class.path=/vendor/firmware'
+ATAG_NONE: 0 0
+param logs: N,N,R,N,N,N,N,N,N,N,N,N,N,N,N,N,R,N,R,N,R,N,N,N,N,N,N,N,N,N,N,R,R,R,N,N,N,N,N,N,N,N,N,N,N,N,R,N,N,N,N,N,N,N,N,N,N,N,R,N,N,N,R,N,N,N,N,N,N,N,N,N,R,N,R,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,R,N,N,N,N,N,N,N,N,N,R,R,N,N,N,R,N,N,N,N,N,N,N,N,N,R,N,R,N,N,N,R,N,N,N,N,N,N,N,N,R,N,N,R,N,N,N,N,N,N,N,
+challenge_size is 90 144
+[CC MODE] Failed. Invalid Magic
+secure info base: 0x45a20000 and SMC Num = 0x83000013
+
+secure smc success!!!
+pack_atags: ramdisk size start 0x43000000, size 0x1ddb7b
+Updating device tree @0x48000000: done
+[OTP] SW LOCK Success
+cal_hash_lock: cal_hash locked
+check_rcnt: not supported
+
+Starting kernel at 0x40080000...
+
+[MUIC] SWITCH_SEL(3)
+BOOTING TIME : 3458

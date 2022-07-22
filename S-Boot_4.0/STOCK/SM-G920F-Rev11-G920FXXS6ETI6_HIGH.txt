@@ -1,0 +1,320 @@
+
+Samsung S-Boot 4.0 for SM-G920F (Sep  3 2020 - 20:20:58 34115342)
+EXYNOS7420 EVT 1.3 (Base on ARM CortexA53)
+3048MB / 0MB / Rev 11 / G920FXXS6ETI6 / (PKG_ID 0x0) / LOT_ID N51U4 / SHIP /PINRST (0x10000)
+__if_pmic_rev_init - MUIC API is not ready!
+MON: 0x0(0)
+MON[0] = (0)[0x1c, 0x46]
+MON[1] = (1)[0x1c, 0x47]
+MON[2] = (2)[0x1c, 0x48]
+MON[3] = (3)[0x1c, 0x3e]
+MON[4] = (4)[0x20, 0x42]
+MON[5] = (5)[0x20, 0x4f]
+MON[6] = (6)[0x15, 0x44]
+MON[7] = (7)[0x0c, 0x07]
+pmic_asv_init
+(ASV_TBL_BASE+0x00)[11:0]  bigcpu_asv_group         = 2457
+(ASV_TBL_BASE+0x00)[15:12] bigcpu_ssa0              = 0
+(ASV_TBL_BASE+0x00)[27:16] littlecpu_asv_group      = 2457
+(ASV_TBL_BASE+0x00)[31:28] littlecpu_ssa0           = 0
+(ASV_TBL_BASE+0x04)[11:0]  g3d_asv_group            = 2457
+(ASV_TBL_BASE+0x04)[15:12] g3d_ssa0                 = 0
+(ASV_TBL_BASE+0x04)[27:16] mif_asv_group            = 2457
+(ASV_TBL_BASE+0x04)[31:28] mif_ssa0                 = 0
+(ASV_TBL_BASE+0x08)[11:0]  int_asv_group            = 2457
+(ASV_TBL_BASE+0x08)[15:12] int_ssa0                 = 0
+(ASV_TBL_BASE+0x08)[27:16] cam_disp_asv_group       = 2457
+(ASV_TBL_BASE+0x08)[31:28] cam_disp_ssa0            = 0
+(ASV_TBL_BASE+0x0C)[3:0]   dvfs_asv_table_version   = 15
+(ASV_TBL_BASE+0x0C)[4]     asv_group_type           = 0
+(ASV_TBL_BASE+0x0C)[7:5]   reserved01               = 0
+(ASV_TBL_BASE+0x0C)[8]     shift_type               = 0
+(ASV_TBL_BASE+0x0C)[9]     ssa1_enable               = 0
+(ASV_TBL_BASE+0x0C)[10]    ssa0_enable             = 0
+(ASV_TBL_BASE+0x0C)[15:11] reserved02               = 0
+(ASV_TBL_BASE+0x0C)[16]    asv_method               = 1
+(ASV_TBL_BASE+0x0C)[31:17] reserved03               = 0
+(ASV_TBL_BASE+0x10)[3:0]   main_asv_group           = 0
+(ASV_TBL_BASE+0x10)[7:4]   main_asv_ssa             = 0
+(ASV_TBL_BASE+0x10)[11:8]  bigcpu_ssa1              = 0
+(ASV_TBL_BASE+0x10)[15:12] littlecpu_ssa1           = 0
+(ASV_TBL_BASE+0x10)[19:16] g3d_ssa1                 = 0
+(ASV_TBL_BASE+0x10)[23:20] mif_ssa1                 = 0
+(ASV_TBL_BASE+0x10)[27:24] int_ssa1                 = 0
+(ASV_TBL_BASE+0x10)[31:28] cam_disp_ssa1            = 0
+(ASV_TBL_BASE+0x14)[8:0]   bigcpu_ssa_ema           = 0
+(ASV_TBL_BASE+0x14)[17:9]  littlecpu_ssa_ema        = 0
+(ASV_TBL_BASE+0x14)[26:18] g3d_ssa_ema              = 0
+(ASV_TBL_BASE+0x14)[31:27] reserved04               = 0
+chip_status = f, bin2_efuse = 0 
+muic_register_max77843_apis
+muic_is_max77843 chip_id:0x43 muic_id:0xb5 -> matched.
+MUIC rev = MAX77843(181)
+init_multi_microusb_ic Active MUIC 0xb5
+max77843_init_microusb_ic: MUIC: CDETCTRL:0x2d
+max77843_init_microusb_ic: MUIC: CONTROL1:0x00
+max77843_init_microusb_ic: MUIC: CONTROL2:0x3b
+max77843_muic_get_adc_value: STATUS1:0x1f
+max77843_muic_get_adc_value: ADC:0x1f
+max77843_muic_get_adc_value: STATUS1:0x1f
+max77843_muic_get_adc_value: ADC:0x1f
+max77843_muic_get_chg_typ: STATUS2:0x41
+max77843_muic_get_chg_typ: CHGTYP:0x01
+max77843_muic_get_adc_value: STATUS1:0x1f
+max77843_muic_get_adc_value: ADC:0x1f
+max77843_muic_get_chg_typ: STATUS2:0x41
+max77843_muic_get_chg_typ: CHGTYP:0x01
+load Secure Payload done.
+
+Chip ID : 06d54d062338 / 0x00009200
+EL3 monitor information => Built : 18:08:20, Mar 31 2016
+bConfigDescrLock: 1
+
+[Debug Info.]
+   S-BOOT : VERSION_-+F0
+ SecureOS : 20 (MB)
+- read_bl1
+blk_bread_bootsector: LUN 1, from 0x0, size 0x10, buffer 0x45708000
+Verify_Binary_Signature 0x45720120 2948@0x45710000, 256@0x45720020
+pit_check_signature (PIT) valid.
+PARAM ENV VERSION: v1.0..
+blk_bread_bootsector: LUN 1, from 0xffe, size 0x1, buffer 0x441244c8
+initialize_ddi_data: usable! (0:0x0), warranty reason : (0x0000)
+MAGIC_RAM_BASE: 66260564, MAGIC_RAM_BASE2: c7f323db, ompin: 2000a
+[ldfw] Pass LDFW partition!
+[ldfw] read whole CM partition from the storage
+ldfw: 0th ldfw's version 0x20161024 name : CryptoManagerV20
+ldfw: 1th ldfw's version 0x20151203 name : fmp_fw
+ldfw: init ldfw(s). whole ldfws size 0x204110
+[ldfw] try to init 2 ldfw(s). except 0 ldfw 2 ldfw(s) have been inited done.
+[mobi_drv] add: 0x43e73ef0, size: 14585
+MobiCore IDLE flag = 0
+MobiCore Driver loaded and RTM IDLE!
+[OTP] 27 bit read: 0x5
+[OTP] 22 bit read: 0x0
+[OTP] 21 bit read: 0x0
+[OTP] 23 bit read: 0x1
+[OTP] 26 bit read: 0x1
+[OTP] NANTIRBK0 bit reading: start
+[OTP] NANTIRBK0: 6 bit
+[OTP] 28 bit read: 0x1
+[OTP] 29 bit read: 0x0
+[OTP] 30 bit read: 0x0
+[OTP] 25 bit read: 0x1
+[OTP] ETC value: 0
+[OTP] ETC value: 0
+[OTP] ETC value: 0
+[OTP] ETC value: 0
+[EFUSE] SMC Read the 0x0 ...
+[EFUSE] SMC Read Count value: 6
+[EFUSE] SMC Read the 0x1 ...
+[EFUSE] SMC Read Count value: 1
+[EFUSE] SMC Read the 0x2 ...
+[EFUSE] SMC Read Count value: 0
+[EFUSE] SMC Read the 0x3 ...
+[EFUSE] SMC Read Count value: 0
+(1,5) vs (1,5)
+[EFUSE] This is commercial device.
+set_tzpc_secureport: successfully protected 0 1 1
+eSE Protection!!
+Authenticated data read request (Swapped)
+Authenticated data read response (Swapped)
+RPMB: get hmac value: success
+HMAC compare success !!
+
+
+initialize_secdata_rpmb: usable! (0x52504d42)
+DDR SIZE: 3G (0xc0000000)
+LPDDR4 manufacturer : Samsung
+bin2_efuse = 0 
+[TMU] 57, 57, 56, 55
+UFS vendor: SAMSUNG
+FW rev : 0000
+product : KLUBG4G1BE-E0B1
+UFS size (GB) : 32
+UFS ID : 11160BEB81553D01
+PROVISION : PASS
+PROVISION : PASS
+max77843_muic_api_print_init_regs: INTMASK[1:0x00, 2:0x00, 3:0x00]
+max77843_muic_api_print_init_regs: MUIC: CDETCTRL:0x2d
+max77843_muic_api_print_init_regs: MUIC: CONTROL1:0x00
+max77843_muic_api_print_init_regs: MUIC: CONTROL2:0x3b
+max77843_muic_api_print_init_regs: MUIC: CONTROL3:0x00
+max77843_muic_api_print_init_regs: MUIC: CONTROL4[0x16]:0xb2
+adc_read_temp temp_adc = 1881 temp = 250
+init_ific : MAX77843(0)
+init_ific : MAX77843(0)
+set_float_voltage: max77843 battery cv voltage 0x9c
+set_charger_state: buck(1), chg(1), reg(0x05)
+max77843_get_charger_status: default ID + VB
+get_wireless_charger_detect: wireless check 0
+get_wireless_charger_detect : CHG_DTLS(0x01)
+set_precharge_current: chg_state:0x1, wpc_status:1.
+max77843_muic_get_adc_value: STATUS1:0x1f
+max77843_muic_get_adc_value: ADC:0x1f
+max77843_muic_get_chg_typ: STATUS2:0x41
+max77843_muic_get_chg_typ: CHGTYP:0x01
+set_precharge_current: set charge current(in:475, out:450)
+set_charging_current : current(450), data(0x89)
+set_input_current : current = (475 <-- 475), step = -25
+set_input_current : after(475 <--> 467), data(0xe)
+max77843_get_charger_status: default ID + VB
+fuelguage : wpc_status(0)
+set_charger_state: buck(1), chg(0), reg(0x04)
+init_fuel_gauge: Start!!
+init_fuel_gauge : MAX77843(0)
+max77843_muic_get_adc_value: STATUS1:0x1f
+max77843_muic_get_adc_value: ADC:0x1f
+adc_read_temp temp_adc = 1883 temp = 250
+init_fuel_gauge temp = 25 
+init_fuel_gauge : MAX77843(0)
+init_fuel_gauge: Battery type : SDI, capacity: 5177, status: 128
+init_fuel_gauge: Already initialized (0x1439, SDI type)
+check_validation_with_tablesoc: Start!!
+fuel_gauge_read_soc: SOC(1), data(0x0173)
+fuel_gauge_read_ocv: VFOCV(3668), data(0xb768)
+calculate_table_soc : low(0) high(6) mid(7) table_soc(0)
+calculate_table_soc : low(4) high(6) mid(3) table_soc(0)
+calculate_table_soc : low(4) high(4) mid(5) table_soc(0)
+calculate_table_soc : low(4) high(3) mid(4) table_soc(0)
+calculate_table_soc: vcell [3668] table_soc [10]
+differ(9), table_soc(10), RepSOC(1)
+max77843_muic_get_adc_value: STATUS1:0x1f
+max77843_muic_get_adc_value: ADC:0x1f
+max77843_muic_get_chg_typ: STATUS2:0x41
+max77843_muic_get_chg_typ: CHGTYP:0x01
+fuel_gauge_read_vcell: VCELL(3657), data(0xb6dc)
+ vcell(3657),soc_diff_limit(40), low_temp_reset(0)
+fuel_gauge_read_ocv: VFOCV(3668), data(0xb768)
+fuel_gauge_read_vcell: VCELL(3657), data(0xb6dc)
+fuel_gauge_read_soc: SOC(1), data(0x0173)
+fuel_gauge_read_vfsoc: VFSOC(9), data(0x09e1)
+init_fuel_gauge : OCV(3668), VCELL(3657), SOC(1), VFSOC(9)
+AP_PMIC_SDA	= 1
+PMIC_ID         = 0x12
+OTP:0x78 PWR_SEQ:1 G3D_OCP:1 PSoff:1 INT_Volt:1
+PMIC_STATUS1	= 0x23 PWRON JIGONB PWRON1S
+PMIC_STATUS2	= 0x10 RTC1SE
+PMIC_PWRONSRC	= 0x08 MRST
+PMIC_OFFSRC	= 0x00
+PMIC_INT1	= 0xc2 PWRONR PWRON1S MRB
+PMIC_INT2	= 0x10 RTC1S
+PMIC_INT3	= 0x80 RSVD
+PMIC_RTC_CTRL   = 0x02 
+PMIC_RTC_SMPL   = 0x83 
+RTC TIME: 2022-05-15 14:32:34(0x01)PM
+s5p_check_keypad: 0x1100000
+s5p_check_reboot_mode: INFORM3 = 0 ... skip
+ATLAS_PLL = 1200MHz	APOLLO_PLL = 1200MHz	MIF_PLL = 3104MHz
+MFC_PLL = 468MHz	CCI_PLL = 532MHz
+BUS0_PLL = 1600MHz	BUS1_PLL = 668MHz
+board_uart_rustproof ifc_sense: 0
+  -user build & not FAC
+  -rustproof mode Enabled
+s5p_check_upload: MAGIC(0x66260564), RST_STAT(0x10000)
+max77843_muic_get_adc_value: STATUS1:0x1f
+max77843_muic_get_adc_value: ADC:0x1f
+s5p_check_upload: debug level is HI! (mask: 0x440)
+max77843_ific_set_mrstb: TOPSYS: MAINCTRL1[0x02]: [0x8f]+[0x0f]->[0x0f]
+s5p_check_upload: enable dump_gpr
+max77843_muic_get_adc_value: STATUS1:0x1f
+max77843_muic_get_adc_value: ADC:0x1f
+s5p_check_download: 0
+max77843_muic_get_adc_value: STATUS1:0x1f
+max77843_muic_get_adc_value: ADC:0x1f
+max77843_get_charger_status: default ID + VB
+set_charger_state: buck(1), chg(1), reg(0x05)
+check_pm_status: battery ok, charger boot, waiting 500ms and check again
+max77843_get_charger_status: default ID + VB
+check_pm_status: charger is ok, LPM boot
+AST_CHARGING..
+scr_draw_image: draw 'lpm.jpg'...
+read 'lpm.jpg'(65208) completed.
+LoadJPEG took 193 msec
+board_set_dev_pm: s2mpb02 enable for display
+41, 0, 13, 0x410013
+DETECTED LCD TYPE : S6E3HA2
+mipi-dsi driver(CMD mode) has been probed.
+decon-int: ver0, max win7, command mode, hw trigger
+single dsi mode
+decon0 registered successfully
+max77843_get_charger_status: default ID + VB
+fuel_gauge_read_ocv: VFOCV(3668), data(0xb769)
+fuel_gauge_read_vcell: VCELL(3690), data(0xb88a)
+fuelguage : ocv=3668 vcell=3690
+set_fuelgauge_charging_uvlo : fuelgauge power ok
+set_fuelgauge_charging_uvlo: end
+DMV: Successfully informed TZ of boot mode: Normal
+load_kernel: loading boot image from 81920..
+kernel size = 0x141a800, ramdisk size = 0x32b000
+dt_size:1648640, dt_actual:1648640
+Verify_Binary_Signature 0x45720120 26052640@0x40204800, 256@0x45720020
+Kernel Image
+pit_check_signature (BOOT) valid.
+[TIMA trusted boot]: SEANDROID ENFORCING
+ No need to update kernel type.
+ace_hash_sha_digest: passed.(0)
+tboot ctx base: 45720248
+SMC Num = 0x83000001
+
+mobismc success!!! [ret = 0]
+SMC Num = 0x83000007
+
+mobismc for tima info success!!! [ret = 0]
+Pass. DTBH size is smaller than a page.
+
+<dtbh_header Info>
+    magic:0x48425444, version:0x00000002, num_entries:0x00000009
+
+<device info>
+        chip_id: 0x00001cfc
+    platform_id: 0x000050a6
+     subtype_id: 0x217584da
+         hw_rev: 0x0000000b
+
+dt_entry[06]
+        chip_id: 0x00001cfc
+    platform_id: 0x000050a6
+     subtype_id: 0x217584da
+         hw_rev: 0x0000000a
+     hw_rev_end: 0x0000000b
+         offset: 0x0010d000
+       dtb size: 0x0002d000
+Selected entry hw_ver : 11
+dt_entry of hw_rev 10 is loaded at 0x4a000000.(184320 Bytes)
+[EFUSE] RB count: device(0x6), binary(0x6)
+Kernel RB count: DEVICE:2, BINARY:2
+[OTP] SW LOCK Success
+DDI value :0x00000000
+[UFS]Set WP for SYSTEM : start = 45824, end = 993023
+blkdev_config_smu : ret = 0
+Forced Enable KAP
+Warranty Bit Check passed with KAP param status = 1526595585
+Yes KAP mode - Blowing TZ_KAP_BOOT_STATUS_FUSE
+KAP status = 5afe0001
+secure info base: 45720000 and SMC Num = 0x83000013
+
+secure smc success!!! [ret = 0]
+ATAG_CORE: 5 54410001 0 0 0
+ATAG_MEM: 4 54410002 20000000 40000000
+ATAG_MEM: 4 54410002 20000000 60000000
+ATAG_MEM: 4 54410002 20000000 80000000
+ATAG_MEM: 4 54410002 20000000 A0000000
+ATAG_MEM: 4 54410002 20000000 C0000000
+ATAG_MEM: 4 54410002 1E800000 E0000000
+ATAG_SERIAL: 4 54410006 11160beb 81553d01
+ATAG_INITRD2: 4 54420005 43000000 32a8cf
+ATAG_REVISION: 3 54410007 b
+check_rustproof [0,0] On
+ucs flag is Unknown
+ucs flag : 00 00 00 00
+ATAG_CMDLINE: 10b 54410009 'console=ram loglevel=4 sec_debug.level=0x10001 androidboot.hardware=samsungexynos7420 androidboot.debug_level=0x4948 softlockup_panic=0 ess_setup=0x46000000 sec_tima_log=0x200000@0x48002000 sec_avc_log=0x40000@0x48204000 sec_tsp_log=0x40000@0x48246000 sec_pmu_log=0x200@0x48288000 sec_cmu_log=0x200@0x4828a200 charging_mode=0x0 s3cfb.bootloaderfb=0xe2a00000 lcdtype=4259859 consoleblank=0 androidboot.mode=charger lpj=239616 sec_debug.reset_reason=5 sec_reset.reset_reason=5 ehci_hcd.park=3 oops=panic pmic_info=35 cordon=7b47705045617772564b550e4892729b connie=SM-G920F_OPEN_EUR_61a9f32572b1c7ba896673dedde85487 fg_reset=0 androidboot.emmc_checksum=3 androidboot.boot_salescode= androidboot.odin_download=1 androidboot.bootloader=G920FXXS6ETI6 androidboot.selinux=enforcing androidboot.security_mode=1526595585 androidboot.ucs_mode=0 androidboot.hw_rev=11 androidboot.warranty_bit=0 androidboot.hmac_mismatch=0 androidboot.sec_atd.tty=/dev/ttySAC1 androidboot.serialno=11160beb81553d01 snd_soc_core.pmdown_time=1000 zero_sdchg_ic=0 androidboot.fmp_config=1'
+ATAG_NONE: 0 0
+param logs: 
+pack_atags: ramdisk size start 0x43000000, size 0x32a8cf
+Updating device tree @0x4a000000: done
+
+Starting kernel at 0x40205000...
+
+SWITCH_SEL(3)
+BOOTING TIME : 4227

@@ -1,0 +1,65 @@
+Samsung S-Boot 4.0 for SM-G930F (Sep  8 2020 - 16:55:09 34227861)
+EXYNOS8890 EVT 2.0 (Base on ARM CortexA53)
+4068MB / 0MB / Rev 8 / G930FXXU8ETI2 / (PKG_ID 0x40000000) / LOT_ID N51FU / SHIP />
+MON: 0x7d(7)
+MON[0] = (7)[0x2e, 0x49]
+MON[1] = (0)[0x2f, 0x30]
+MON[2] = (1)[0x31, 0x48]
+MON[3] = (2)[0x36, 0xaa]
+MON[4] = (3)[0x41, 0x58]
+MON[5] = (4)[0xff, 0x04]
+MON[6] = (5)[0x1b, 0x5d]
+MON[7] = (6)[0x0c, 0x00]
+nAsv_BIG:3 ,nAsv_LITT:5 ,nAsv_G3D:8 ,nAsv_MIF:6 ,nAsv_INT:8 ,nAsv_CP:8 ,nAsv_CAM_D>
+nIds_BIG:0 ,nIds_LITT:0 ,nIds_INT:0 ,nIds_MIF:0 ,nIds_G3D:0 ,nIds_DISP:0 ,nIds_CP:>
+Resume bl2 flow
+BL2_VAL : 0x      1f 0x      1f 0x      1f
+clk_init bl2 flow
+BL2_CLK_VAL : 0x      1c 0x      1c 0x      1c
+dmc_init bl2 flow
+BL2_LPDDR4_VAL : 0x9198d0fd 0x8ae1b8f1 0x132e94b5
+CP Mailbox Debug
+0x10540180 : 0x56f3aae0 0x   917cb
+0x10540184 : 0x7fc376b9 0x89173527
+0x10540188 : 0xe4622414 0xd6e687f0
+0x1054018C : 0x530f428d 0x6437e3e7
+0x10540190 : 0x5eabc8e9 0xbe602afa
+0x105C0038 : 0x534509a0 0x299eb2fd
+CP BL flow
+0x10920014 : 0xcf150832 0x861bffab
+0x10800028 : 0xbb005247 0x5a7f2917
+Resume el3 flow
+EL3_VAL : 0x     8a0 0x     8a0 0x     8a0
+muic_register_max77854_apis
+muic_is_max77854 chip_id:0x54 muic_id:0xb5 -> matched.
+[MUIC] print_init_regs
+ INT:00 00 00 ST:1f 00 00 IM:0d 11 8b CDET:2d 0c CTRL:40 3b 00 b2 HVCT:00 00 LDO0:>
+
+MUIC rev = MAX77854(181)
+init_multi_microusb_ic Active MUIC 0xb5
+ifconn_init: MUIC Mode
+[MUIC] print_init_regs
+load Secure Payload done.
+
+Chip ID : 06f6ae6a2d38 / 0x00000000
+EL3 Monitor information:
+Onyx-OPR6-8511R1-1-g186f7 186f7bf d0d3607 8508926 6fa036e 5629f57 sw0323.kang aarc>
+
+UFS link established
+UFS device initialized
+bConfigDescrLock: 1
+sw_unlock success
+sw_unlock success
+sw_unlock success
+ifconn_com_to_open:
+[MUIC] CONTROL1: 0x00
+
+[Debug Info.]
+   S-BOOT : VERSION_-+H0
+ SecureOS : 20 (MB)
+- read_bl1
+blk_bread_bootsector: LUN 1, from 0x0, size 0x10, buffer 0x90c08000
+Verify_Binary_Signature 0x90c20120 3212@0x90c10000, 256@0x90c20020
+pit_check_signature (PIT) valid.
+PARAM ENV VERSION: v1.0..
+param logs: N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,N,R,N,N,N,N,N,N,N,N,N,N,N,N,N,N,>
