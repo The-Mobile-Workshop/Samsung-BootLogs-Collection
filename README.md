@@ -1,4 +1,4 @@
-# Exynos-Log-Collection
+# Samsung-BootLogs-Collection
 Collection of bootloader logs taken from Samsung Exynos devices, Meant for analyzing and reverse-engineering.
 Debug level i am uncertain of
 Feel free to Submit logs
