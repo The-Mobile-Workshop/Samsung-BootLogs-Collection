@@ -9,7 +9,7 @@ Feel free to Submit logs. (how to coming soon)
 | Folder Name     | Discription                                   |
 | --------------- | --------------------------------------------- |
 | STOCK           | Stock ROM, no Knox trip (no modifications)    | 
-| TRIPPED         | Stock/Custom, Knox fuse tripped               |
+| TRIPPED         | Stock/Custom ROM, Knox fuse tripped               |
 | FAC_COM         | Factory "Combination" Firmware, No Knox trip. |
 | FAC_COM_TRIPPED | Factory "Combination" Firmware, Knox tripped. |
 
