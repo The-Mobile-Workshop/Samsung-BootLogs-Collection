@@ -1,0 +1,197 @@
+SC7730(EVT 0.0) / 1536MB / 0MB / Rev 11 / T561XXU0APA2
+
+initialize_ddi_data: usable! (30:0xe)
+PARAM ENV VERSION: v1.0..
+[int value]:17484
+LOG DISABLE!
+Greetings!   Hardware Revision for this PBA is 11  
+******* microusb init****** 
+init_microusb_ic: device_id=0xffff
+reg value int1= 0 int2= 2 control = e4
+sprdfb : adapt_panel_from_readid, try to mount panel (0x3)
+sprdfb : dispc_update_clock, need_clock (76226520), divider (5), dpi_clock (76800000)
+nt51017_pin_init
+nt51017_readid!
+nt51017_rea016 - 22:30:19)
+
+SC7730(EVT 0.0) / 1536MB / 0MB / Rev 11 / T561XXU0APA2
+
+initialize_ddi_data: usable! (30:0xe)
+PARAM ENV VERSION: v1.0..
+[int value]:17484
+LOG DISABLE!
+Greetings!   Hardware Revision for this PBA is 11  
+******* microusb init****** 
+init_microusb_ic: device_id=0xffff
+reg value int1= 0 int2= 2 control = e4
+sprdfb : adapt_panel_from_readid, try to mount panel (0x3)
+sprdfb : dispc_update_clock, need_clock (76226520), divider (5), dpi_clock (76800000)
+nt51017_pin_init
+nt51017_readid!
+nt51017_reaid = 0x11
+get_charger_status: data_type=0x0
+microusb_get_attached_device: data_type1=0x0 data_type2=0x0 adc=0x1f
+[MUIC]SM device_id = 0x11
+no usb cable is_usb_cable: data_type=0x0
+[IIC DRV:]I2C_HAL_Open: handle=1, ref=2
+i2c_open I2C_HAL_Open 0, 1 
+[IIC DRV:]I2C_HAL_Open: handle=10, ref=3
+i2c_open I2C_HAL_Open 1, 10 
+[IIC DRV:]I2C_HAL_Open: handle=11, ref=4
+i2c_open I2C_HAL_Open 2, 11 
+[IIC DRV:]I2C_HAL_Open: handle=25, ref=2
+i2c_open I2C_HAL_Open 3, 25 
+SMB358_set_registers: Setting charing current to 450mAid = 0x11
+get_charger_status: data_type=0x0
+microusb_get_attached_device: data_type1=0x0 data_type2=0x0 adc=0x1f
+[MUIC]SM device_id = 0x11
+no usb cable is_usb_cable: data_type=0x0
+[IIC DRV:]I2C_HAL_Open: handle=1, ref=2
+i2c_open I2C_HAL_Open 0, 1 
+[IIC DRV:]I2C_HAL_Open: handle=10, ref=3
+i2c_open I2C_HAL_Open 1, 10 
+[IIC DRV:]I2C_HAL_Open: handle=11, ref=4
+i2c_open I2C_HAL_Open 2, 11 
+[IIC DRV:]I2C_HAL_Open: handle=25, ref=2
+i2c_open I2C_HAL_Open 3, 25 
+SMB358_set_registers: Setting charing current to 450mA
+[int value]:0
+SMPL PARAM is 0x0
+mach_board_main: boot check start (0x0)
+[int value]:20300
+sprd_check_upload: MAGIC(0xde41e41d), RST_STAT(0x0), is_7s_reset(0x0)
+sprd_check_upload: No DDR TRAINING ERROR detected : 0x28f1abc4 sig=0x0
+[int value]:0
+[int value]:0
+[int value]:0
+microusb_get_attached_device: data_type1=0x0 data_type2=0x0 adc=0x1f
+[MUIC]SM device_id = 0x11
+sprd_check_download: 0
+[int value]:0
+eica status 0
+adie efuse blocks dump:
+--	skip!!
+sci_efuse_calibration_get() get efuse block , deta: 0x0000
+[int value]:0
+SMPL PARAM is 0x0
+mach_board_main: boot check start (0x0)
+[int value]:20300
+sprd_check_upload: MAGIC(0xde41e41d), RST_STAT(0x0), is_7s_reset(0x0)
+sprd_check_upload: No DDR TRAINING ERROR detected : 0x28f1abc4 sig=0x0
+[int value]:0
+[int value]:0
+[int value]:0
+microusb_get_attached_device: data_type1=0x0 data_type2=0x0 adc=0x1f
+[MUIC]SM device_id = 0x11
+sprd_check_download: 0
+[int value]:0
+eica status 0
+adie efuse blocks dump:
+--	skip!!
+sci_efuse_calibration_get() get efuse block , deta: 0x0000to 2800mv, bias +0.821
+
+Verify vdddcxo ...
+	vdddcxo chan[23] adc 1990, default 1800mv, from 1887mv to 1800mv, bias +4.833
+
+Verify vddgen0 ...
+	vddgen0 chan[21] adc 3011, default 1800mv, from 1832mv to 1800mv, bias +1.777
+
+Verify vddgen1 ...
+	vddgen1 chan[21] adc 2972, default 1800mv, from 1809mv to 1800mv, bias +0.500
+
+Verify vddemmccore ...
+	vddemmccore chan[23] adc 3365, default 3000mv, from 3045mv to 3000mv, bias +1.500
+
+Verify vddrf0 ...
+	vddrf0 chan[21] adc 2984, default 1800mv, from 1816mv to 1800mv, to 2800mv, bias +0.821
+
+Verify vdddcxo ...
+	vdddcxo chan[23] adc 1990, default 1800mv, from 1887mv to 1800mv, bias +4.833
+
+Verify vddgen0 ...
+	vddgen0 chan[21] adc 3011, default 1800mv, from 1832mv to 1800mv, bias +1.777
+
+Verify vddgen1 ...
+	vddgen1 chan[21] adc 2972, default 1800mv, from 1809mv to 1800mv, bias +0.500
+
+Verify vddemmccore ...
+	vddemmccore chan[23] adc 3365, default 3000mv, from 3045mv to 3000mv, bias +1.500
+
+Verify vddrf0 ...
+	vddrf0 chan[21] adc 2984, default 1800mv, from 1816mv to 1800mv,  bias +1.428
+
+Verify vddcore ...
+match_vol_para name vddcore, ideal_vol 900
+	vddcore chan[13] adc 2448, default 900mv, from 926mv to 900mv, bias +2.888
+microusb_get_attached_device: data_type1=0x0 data_type2=0x0 adc=0x1f
+[MUIC]SM device_id = 0x11
+get_charger_status: data_type=0x0
+[int value]:0
+check_pm_status: charger is not detected
+microusb_initialize_success: device_id=0x11
+check_pm_status: voltage is ok
+AST_POWERON..
+sprdfb : [LCD] lcd_display
+nt51017_backlight ==> hw_revision : 11, brightness : 143
+nt5 bias +1.428
+
+Verify vddcore ...
+match_vol_para name vddcore, ideal_vol 900
+	vddcore chan[13] adc 2448, default 900mv, from 926mv to 900mv, bias +2.888
+microusb_get_attached_device: data_type1=0x0 data_type2=0x0 adc=0x1f
+[MUIC]SM device_id = 0x11
+get_charger_status: data_type=0x0
+[int value]:0
+check_pm_status: charger is not detected
+microusb_initialize_success: device_id=0x11
+check_pm_status: voltage is ok
+AST_POWERON..
+sprdfb : [LCD] lcd_display
+nt51017_backlight ==> hw_revision : 11, brightness : 143
+nt588240000
+nv_updated: 0, NV_UPDATED: 1234abcd
+nv1_magic: 4e56, NV_HEAD_MAGIC: 4e56
+nv_read_with_backup backup checksum 0x33bb
+fixnv_read_with_backup: both org and bak partition are ok!
+runtimenv_read_with_backup origin checksum 0x7458
+runtime_read_with_backup backup checksum 0x7458
+runtimenv_read_with_backup: both org and bak partition are ok!
+_boot_load_required_image: load MODEM to addr 0x88300000
+_boot_partition_read: partition:MODEM read success!
+_boot_load_required_image: load WDSP to addr 0x88020000
+_b88240000
+nv_updated: 0, NV_UPDATED: 1234abcd
+nv1_magic: 4e56, NV_HEAD_MAGIC: 4e56
+nv_read_with_backup backup checksum 0x33bb
+fixnv_read_with_backup: both org and bak partition are ok!
+runtimenv_read_with_backup origin checksum 0x7458
+runtime_read_with_backup backup checksum 0x7458
+runtimenv_read_with_backup: both org and bak partition are ok!
+_boot_load_required_image: load MODEM to addr 0x88300000
+_boot_partition_read: partition:MODEM read success!
+_boot_load_required_image: load WDSP to addr 0x88020000
+_b_csd[171] = 0x11, address = 0x0
+dev_tree_get_entry_ptr(): magic=44525053,ver=1,num=12
+dev_tree_get_entry_ptr(): platform_id=8830,v=0,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=1,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=2,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=3,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=4,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=5,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=6,rev=20000
+dev_tree_get_entry_ptr(): p_csd[171] = 0x11, address = 0x0
+dev_tree_get_entry_ptr(): magic=44525053,ver=1,num=12
+dev_tree_get_entry_ptr(): platform_id=8830,v=0,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=1,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=2,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=3,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=4,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=5,rev=20000
+dev_tree_get_entry_ptr(): platform_id=8830,v=6,rev=20000
+dev_tree_get_entry_ptr(): pine: mem=1536M init=/init ram=1536M lcd_id=ID000003 lcd_base=9ea44000 initrd=0x85500000,0x18ca83 wfixnv=0x88240000,0x40000 wruntimenv=0x88280000,0x60000 sec_debug.reset_reason=0x1A2B3C00 hw_revision=11 muic_rustproof=0 sec_debug.level=0 androidboot.debug_level=0x4f4c console=null loglevel=0 sec_log=0xffe00@0x86b00000 androidboot.bootloader=T561XXU0APA2  androidboot.emmc_checksum=0 mem_cs=2, mem_cs0_sz=30000000 connie=SM-T561_OPEN_EUR_1312892faaf1d358126d454b0cc6d3c7 cordon=ae57b64661591a71dde808f62b580699 aine: mem=1536M init=/init ram=1536M lcd_id=ID000003 lcd_base=9ea44000 initrd=0x85500000,0x18ca83 wfixnv=0x88240000,0x40000 wruntimenv=0x88280000,0x60000 sec_debug.reset_reason=0x1A2B3C00 hw_revision=11 muic_rustproof=0 sec_debug.level=0 androidboot.debug_level=0x4f4c console=null loglevel=0 sec_log=0xffe00@0x86b00000 androidboot.bootloader=T561XXU0APA2  androidboot.emmc_checksum=0 mem_cs=2, mem_cs0_sz=30000000 connie=SM-T561_OPEN_EUR_1312892faaf1d358126d454b0cc6d3c7 cordon=ae57b64661591a71dde808f62b580699 am=0 mem_cs=2, mem_cs0_sz=30000000 connie=SM-T561_OPEN_EUR_1312892faaf1d358126d454b0cc6d3c7 cordon=ae57b64661591a71dde808f62b580699 androidboot.serialno=310095872350b500 calmode=0 fgu_init=2805,7827'
+ATAG_NONE: 0 0
+ptr =  mem=1536M init=/init ram=1536M lcd_id=ID000003 lcd_base=9ea44000 initrd=0x85500000,0x18ca83 wfixnv=0x88240000,0x40000 wruntimenv=0x88280000,0x60000 sec_debug.reset_reason=0x1A2B3C00 hw_revision=11 muic_rustproof=0 sec_debug.level=0 androidboot.debug_level=0x4f4c console=null loglevel=0 sec_m=0 mem_cs=2, mem_cs0_sz=30000000 connie=SM-T561_OPEN_EUR_1312892faaf1d358126d454b0cc6d3c7 cordon=ae57b64661591a71dde808f62b580699 androidboot.serialno=310095872350b500 calmode=0 fgu_init=2805,7827'
+ATAG_NONE: 0 0
+ptr =  mem=1536M init=/init ram=1536M lcd_id=ID000003 lcd_base=9ea44000 initrd=0x85500000,0x18ca83 wfixnv=0x88240000,0x40000 wruntimenv=0x88280000,0x60000 sec_debug.reset_reason=0x1A2B3C00 hw_revision=11 muic_rustproof=0 sec_debug.level=0 androidboot.debug_level=0x4f4c console=null loglevel=0 sec_of=0 sec_debug.level=0 androidboot.debug_level=0x4f4c console=null loglevel=0 sec_log=0xffe00@0x86b00000 androidboot.bootloader=T561XXU0APA2  androidboot.emmc_checksum=0 mem_cs=2, mem_cs0_sz=30000000 connie=SM-T561_OPEN_EUR_1312892faaf1d358126d454b0cc6d3c7 cordon=ae57b64661591a71dde808f62b580699 androidboot.serialno=310095872350b500 calmode=0 fgu_init=2805,7827 
+nv_infor:[89bffc00] mem=1536M init=/init ram=1536M lcd_id=ID000003 lcd_base=9ea44000 initrd=0x85500000,0x18ca83 wfixnv=0x88240000,0x40000 wruntimenof=0 sec_debug.level=0 androidboot.debug_level=0x4f4c console=null loglevel=0 sec_log=0xffe00@0x86b00000 androidboot.bootloader=T561XXU0APA2  androidboot.emmc_checksum=0 mem_cs=2, mem_cs0_sz=30000000 connie=SM-T561_OPEN_EUR_1312892faaf1d358126d454b0cc6d3c7 cordon=ae57b64661591a71dde808f62b580699 androidboot.serialno=310095872350b500 calmode=0 fgu_init=2805,7827 
+nv_infor:[89bffc00] mem=1536M init=/init ram=1536M lcd_id=ID000003 lcd_base=9ea44000 initrd=0x85500000,0x18ca83 wfixnv=0x88240000,
