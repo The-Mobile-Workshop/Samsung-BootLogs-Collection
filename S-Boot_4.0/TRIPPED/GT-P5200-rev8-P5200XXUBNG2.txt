@@ -1,0 +1,1514 @@
+
+
+                               IA32 CPU Firmware                              
+      Copyright (C) 1999-2013, Intel Corporation. All rights reserved.
+
+      
+7[0;23r[24;75H[1K[24;1H[1mIntel(R) Atom(TM) Z2560 CPU FW 00.73 (INTELFDK)[0m8------------------------------>FOR Teewinot ONLY<-----------------------------
+******************************************************************************
+************** Customer release based on Rel 00.49 + TWN changes**************
+**************** BZ=115220 Bypass time/date check for product ****************
+****************** BZ=118523 Cold Reset on ExecuteOS failure *****************
+****** BZ=124478[TW 346-500-676] Request for logging enhancement in IAFW *****
+************* BZ=127192 Disable Active Refresh during JEDEC Init *************
+******************* BZ=none include ucode patch M013065110E ******************
+**************************** New in this code drop ***************************
+***** BZ=none Changed trace to match TWN RAMDUMP application requirement *****
+*************** BZ=none Removed UART and PTI HW output methods ***************
+******** Short circuiting the emInit when a fixed battery is detected. *******
+********************* Customization done 201308261512 MST ********************
+******************************************************************************
+[37;41m******************************INTEL CONFIDENTIAL******************************
+[0m
+0x1E, 0x20, 0x21, 
+
+ERROR:::::SPID Not Programmed, Fake data being used based on IFWI version
+
+
+
+ERROR:::::SPID FRU Not Programmed, Fake data being used based on IFWI version
+
+
+OSC_CLK3 defaults only
+0x22, 
+OEM board; Skip spidBasedPanelNdxUpdate
+0x23, 
+Forced Battery via SMIP FPO Bit 2
+0x28, 0x2A, 0x2B, in csSFIDevsEntries, HW Id 0x0019
+SFI Dev...PR3
+in csSFIGpioEntries, HW Id 0x0019
+
+SFIOEMBInit:tbl->spidTbl update
+0x2C, 0x2D, 0x2F PostCodes Done
+
+IA32 FW:       CPU v000.073/00.49; SUPP v000.073/00.49; VH: 000.081/00.51
+IA Timestamp:  2013.08.26:18.00 (INTELFDK)
+SCU FW:        ROM 177.000/B1.00; RT 033.048/21.30
+PUNIT FW:      v224.064/E0.40
+IFWI:          v249.086/F9.56
+PL:            0000010E
+Config & PCB:  OEM Platform, C, CLV+ B1, Micron (00,00) SR 4Gb 1067 1GB 
+               FHOB DW0/DW1: 00000104:00010140
+               I2C Expander: FFFFFFFC:0000000F
+               IA Options:   024020A1:00000000:03E00000:80005C00:00000101;0587
+               [OS HASH VERIFY] [EIST] [eMMC] [VALID BATT][WDT]
+
+Loading OS...
+pOsip = 1000000
+
+-->OSIP verified
+
+00000000 F8000000
+
+Android COS path taken
+F8000000 EB03000A
+
+Boot path override selected OS image 0 (OS Attribute 0x00, Reboot Reason 0x0A)
+EB03000A EB03000A
+
+Splash disabled in GCT
+
+Splash display time: 2 ms
+-->Bootable OS image 0 found for requested type 2 (OSII attribute 0x00)
+-->Loading OS image 0 from eMMC block 0x00000032 to DRAM address 0x010FFE20
+-->Starting transfer of 0xA11 512-byte blocks to DRAM
+-->Done loading OS Image to DRAM
+-->platformConfigBuffer_pt.scuFhobDw0.osven != 0
+	-->osIndex: 0, Signed Image
+OS image 0 PASSED verify
+Booting COS
+
+*********************************
+Starting command line:
+-init=/init pci=noearly console=ttyMFD2 console=ttyS0 console=logk0 earlyprintk=nologger loglevel=8 hsu_dma=7 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=ctp_pr1 emmc_ipanic.ipanic_part_number=1 ip=50.0.0.2:50.0.0.1::255.255.255.0::usb0:on hsu_rx_wa g_android.fastboot=1 droidboot.scratch=100
+-
+
+OSNIB.wakesrc = 0x3
+OSNIB.RR = 0xA
+
+Battery is high enough for normal boot
+3533mV > 0mV
+
+Ending command line:
+-init=/init pci=noearly console=ttyMFD2 console=ttyS0 console=logk0 earlyprintk=nologger loglevel=8 hsu_dma=7 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=ctp_pr1 emmc_ipanic.ipanic_part_number=1 ip=50.0.0.2:50.0.0.1::255.255.255.0::usb0:on hsu_rx_wa g_android.fastboot=1 droidboot.scratch=100 androidboot.wakesrc=03 androidboot.mode=charger-
+*********************************
+
+WDT aka Timer7 setup
+Warn Duration for Timer7: 00 seconds
+Start Timer7 bit 0 -> 1: 00000000000000000000000000000000
+[0;24r[24;1H[2KM
+Calling OS entry point --> 0x01101000 ...
+
+Using NEW OSHOB structure size = 176 bytes
+OSNIB size = 32 bytes OEMNIB size = 64 bytes
+0xFF00_0510 FullChipRegister: Status flag = 0x0
+0xFF10_0510 SCFabricRegister: Status flag = 0x0
+RTCSC2 = 0x11,	 RTCSC3 = 0xcf,	 RTCSC4 = 0xcf
+Watchdog Disabled! 
+usb is connected, skip to set uart path
+__stmpe811_write : fail
+MUIC: CONTROL1:0x00
+MUIC: CONTROL1:0x00
+MUIC: CONTROL2:0x3b
+MUIC: CONTROL2:0x3b
+[SCU_IPC_DEBUG] board ID: NOT_IDENTIFIED(8)
+VERSION : 0xa501
+mmc_read_ext_csd : ext_csd_rev = 0x5
+cardtype: 0x00000007
+SB_MMC_HS_52MHZ_1_8V_3V_IO
+mmc->card_caps: 0x00000311
+mmc->host_caps: 0x00000311
+!!!Enter 8 Bit mode.!!!
+clt_mmc_init: mmc->capacity = 0x1d58000
+[BOOT] RESETIRQ1=0x00 RESETIRQ2=0x00 (interrupt tree)
+[BOOT] SCU_TR=0x00020013 IA_TR=0xffffffff (oshob)
+[BOOT] RR=0x00 WD=0x00 ALARM=0x00 (osnib)
+[BOOT] WAKESRC=0x03 RESETIRQ1=0x08 RESETIRQ2=0x00 (osnib)
+
+Samsung S-Boot 4.0 for GT-P5200 (Jul 21 2014 - 17:57:55)
+
+CLT(EVT 0.0) / 1024MB / 15024MB / Rev 8 / P5200XXUBNG2
+
+pit_check_signature (PIT) valid.
+initialize_ddi_data: usable! (1:0xe)
+PARAM ENV VERSION: v1.0..
+pressed_key = 0x0
+clt_charger_init : [battery] using external charger init(3)
+STATUS1:0x3f, 2:0x43
+vbvolt=0x1, chgtyp=0x3, adc=0x1f, ret=0x1031f
+[check_cable_type] : Output of USB Charger Detection 3
+[max77693_init_charger] : attached device(0x02) :  TA
+clt_max77693_set_charger_state: chg_cnfg_02 (0x80) -> (0x1e) -> (0x1e)
+clt_max77693_set_charger_state: chg_cnfg_03 (0x00) -> (0x00) -> (0x00)
+clt_max77693_set_charger_state: chg_cnfg_04 (0xdd) -> (0xdd) -> (0xdd)
+clt_max77693_set_charger_state: chg_cnfg_09 (0x19) -> (0x64) -> (0x64)
+set_charger_state : buck(1), chg(0), reg(0x04)
+init_fuel_gauge: Start!!
+[0] get_adc_battid() = 92
+[1] get_adc_battid() = 91
+[2] get_adc_battid() = 92
+get_adc_battid() = 91
+init_fuel_gauge: Battery type : SDI
+init_fuel_gauge: Already initialized (0x32cd, SDI type)
+STATUS1:0x3f, 2:0x43
+vbvolt=0x1, chgtyp=0x3, adc=0x1f, ret=0x1031f
+clt_charger_init : cable_type(0x02)
+set_charger_state : buck(1), chg(1), reg(0x05)
+intel_scu_ipc_cmd_oemnib : done => 0x0
+check_reboot_cmd: nCmd = 0 ... skip check_reboot_cmd
+debug level = 0x4f4c
+disable max77693 manual reset
+clt_max77693_disable_manual_reset: set max77693 MANCTRL1 val = 0x4
+clt_max77693_disable_manual_reset: read max77693 MANCTRL1 val = 0x4
+disable PMIC cod off triggered by PWRBTN#: 6
+intel_scu_ipc_cmd_oemnib : done => 0x0
+STATUS1:0x3f, 2:0x43
+vbvolt=0x1, chgtyp=0x3, adc=0x1f, ret=0x1031f
+check_download: 0
+Is_lpm_boot : boot-mode saved in param = 0
+Is_lpm_boot : jig-on level = 0, ignore...
+STATUS1:0x3f, 2:0x43
+vbvolt=0x1, chgtyp=0x3, adc=0x1f, ret=0x1031f
+stat=0x1031f, adc=0x1f, chg=0x3, vbvolt=1, pinLevel=0
+Is_lpm_boot : LPM-mode boot
+fuel_gauge_read_vcell: VCELL(3578), data(0xb2ee)
+fuel_gauge_read_soc: SOC(0), data(0x0000)
+check_low_battery : rb=0 jig=0
+check_low_battery : v=3578 soc=0
+skip check low battery
+AST_CHARGING..
+scr_draw_image: draw 'lpm.jpg'...
+read 'lpm.jpg'(93358) completed.
+<start_checksum:355>CHECKSUM_HEADER_SECTOR :4096
+<start_checksum:357>offset:6144, size:6296
+<start_checksum:361>CHECKSUM_HEADER_INFO : NeedChecksum:0 PartNo:27
+Not Need Movinand Checksum
+Movinand Checksum Confirmation Pass
+load_kernel: loading boot image from 106496..
+total size : 6582272
+pit_check_signature (BOOT) invalid.
+Set invalid sign flag
+if_ddi_data: succeeded. (1:0xe)
+ipc_mb opcode = 0x84, status 0x01 ostype 0x00 oper 0x00
+BOOT_MAGIC == ANDROID!
+CMDLINE LENGTH = 563
+CMDLINE = init=/init console=sec_log_buf kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=santos103g androidboot.mode=charger sec_debug.level=0 loglevel=0 androidboot.debug_level=0x4f4c vmalloc=224m sec_log=2052K@0x10000000 sec_bootfb=0x3f000000 lcd_panel_id=0 androidboot.revision=8 switch_sel=3 cordon=ce4bc95477bb4f8c81daca0f5849c536 connie=GT-P5200_OPEN_EUR_5006c968835c3bee96ab5c3c5765e8db androidboot.emmc_checksum=3 androidboot.bootloader=P5200XXUBNG2 androidboot.serialno=3200a20b92309000 snd_soc_core.pmdown_time=1000 jig=0
+Bootstub: map SFI MMAP to e820 table
+add mmap: 0x00000000 0x00098000 1
+add mmap: 0x00100000 0x00580000 2
+add mmap: 0x00680000 0x00680000 1
+add mmap: 0x00d00000 0x00300000 2
+add mmap: 0x01000000 0x35ff0000 1
+add mmap: 0x36ff0000 0x0090d000 2
+add mmap: 0x378fd400 0x00100000 2
+add mmap: 0x379fd400 0x02602000 1
+add mmap: 0x3a000000 0x02200000 2
+add mmap: 0x3c200000 0x02d00000 1
+add mmap: 0x3ef00000 0x00100000 2
+add mmap: 0x3f000000 0x01000000 2
+add mmap: 0xfec00000 0x00001000 2
+add mmap: 0xfee00000 0x00001000 2
+add mmap: 0xff000000 0x01000000 2
+IMR6 start=0x3a000000 end=0x3c1fffff
+new mmap: 0x3a000000 0x02200000 2
+IMR7 start=0x00100000 end=0x0067ffff
+new mmap: 0x00100000 0x00580000 2
+Final E820 table:
+e820: 0x00000000 0x00098000 1
+e820: 0x00100000 0x00580000 2
+e820: 0x00680000 0x00680000 1
+e820: 0x00d00000 0x00300000 2
+e820: 0x01000000 0x35ff0000 1
+e820: 0x36ff0000 0x0090d000 2
+e820: 0x378fd400 0x00100000 2
+e820: 0x379fd400 0x02602000 1
+e820: 0x3a000000 0x02200000 2
+e820: 0x3c200000 0x02d00000 1
+e820: 0x3ef00000 0x00100000 2
+e820: 0x3f000000 0x01000000 2
+e820: 0xfec00000 0x00001000 2
+e820: 0xfee00000 0x00001000 2
+e820: 0xff000000 0x01000000 2
+Final mb_mmap table:
+mb_mmap: 0x00000000 0x00098000 1
+mb_mmap: 0x00100000 0x00580000 0
+mb_mmap: 0x00680000 0x00680000 1
+mb_mmap: 0x00d00000 0x00300000 0
+mb_mmap: 0x01000000 0x35ff0000 1
+mb_mmap: 0x36ff0000 0x0090d000 0
+mb_mmap: 0x378fd400 0x00100000 0
+mb_mmap: 0x379fd400 0x02602000 1
+mb_mmap: 0x3a000000 0x02200000 0
+mb_mmap: 0x3c200000 0x02d00000 1
+mb_mmap: 0x3ef00000 0x00100000 0
+mb_mmap: 0x3f000000 0x01000000 0
+mb_mmap: 0xfec00000 0x00001000 0
+mb_mmap: 0xfee00000 0x00001000 0
+mb_mmap: 0xff000000 0x01000000 0
+Using bzImage to boot
+The SBOOT WP is done!!!
+[MMC] Set write protection (boot partition)
+mmc_bootpart_poweron_wp : boot partition WP OK
+Relocating initramfs to high memory ...
+usb is connected, skip to set uart path
+0xFF00_0510 FullChipRegister: Status flag = 0x0
+0xFF10_0510 SCFabricRegister: Status flag = 0x0
+Jump to kernel 32bit entry ...0x05003c00
+[    0.292860] C0 [      swapper/0] SPID not found in kernel command line.
+[    0.568802] C1 [      swapper/0] pci 0000:00:03.1: unsupported PM cap regs version (4)
+[    0.590099] C2 [      swapper/0] PMU DRIVER BEFORE PROBE
+[    0.650016] C1 [      swapper/1] unexpected IRQ trap at vector 15d
+[    2.161884] C3 [    ia_watchdog] intel_scu_watchdog: intel_scu_watchdog: intel_scu_stop
+[    2.799824] C2 [      swapper/0] Request for hsu(64) GPIO fails
+[    2.800524] C2 [      swapper/0] Request for hsu(67) GPIO fails
+[    3.039012] C2 [      swapper/0] ehci_hcd 0000:00:06.5: can't setup
+[    3.039346] C2 [      swapper/0] ehci_hcd 0000:00:06.5: init 0000:00:06.5 fail, -19
+[    3.929779] C2 [      swapper/0] i2c_dw_pci_probe: invalid bus index 259
+[    3.935237] C3 [      swapper/0] i2c_dw_pci_probe: invalid bus index 261
+[    3.987879] C2 [      swapper/0] i2c i2c-9: sendbytes: NAK bailout.
+[    3.987919] C2 [      swapper/0] Failed to stmpe811 write, reg: 3
+[    4.158682] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    4.238318] C0 [      swapper/0] tc35876x_vid_detect: It seems to use Intel Stand-alone Bootloader...
+[    4.392042] C0 [      swapper/0] bh1730fvc_test_device : POWER ON 0, 3
+[    4.392060] C0 [      swapper/0] bh1730fvc_test_device : slave addr : 0x29
+[    4.407768] C0 [      swapper/0] power_supply sec-fuelgauge: driver failed to report `status' property: 4294967274
+[    4.413197] C0 [    kworker/0:3] power_supply sec-fuelgauge: driver failed to report `status' property: 4294967274
+[    4.588248] C2 [      swapper/0] power_supply sec-charger: driver failed to report `power_now' property: 4294967274
+[    4.604834] C2 [    kworker/2:2] power_supply sec-charger: driver failed to report `power_now' property: 4294967274
+[    5.061982] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    5.074776] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    5.153040] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    5.165218] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    7.230758] C1 [           init] init: property_set("ro.boot.hardware", "santos103g") failed
+[    7.381653] C1 [           init] init: waitpid failed: No child processes
+[    8.022059] C2 [        ueventd] power_supply sec-charger: driver failed to report `power_now' property: 4294967274
+[    8.030470] C2 [        ueventd] power_supply sec-fuelgauge: driver failed to report `status' property: 4294967274
+[    8.079236] C1 [           init] init: /dev/hw_random not found
+[    8.079450] C1 [           init] init: console init failed. Open on Console device  failed(No such device)
+[    8.325490] C1 [           init] init: using deprecated syntax for specifying property 'ro.serialno', use ${name} instead
+[    8.370392] C1 [           init] init: /dev/hw_random not found
+[    8.371457] C1 [           init] init: service 'console' requires console
+[    8.717206] C2 [        healthd] healthd: wakealarm_init: timerfd_create failed
+[   23.524885] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   23.816465] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   24.088408] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   24.380975] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   24.652256] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   25.094270] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   25.365841] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   25.638040] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   25.909728] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   26.191883] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   26.463578] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   26.735826] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   27.007399] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   27.299596] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   27.721623] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   27.993237] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   28.264847] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   28.556803] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   28.829581] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   29.100156] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   29.373021] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   29.644420] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   29.916660] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   30.328621] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   30.601121] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   30.872672] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   31.145041] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   31.416441] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   31.688737] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   31.960948] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   32.232188] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   32.504554] C0 [    kworker/u:9] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   32.916668] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   33.198434] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   33.480462] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   33.762401] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   34.044359] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   34.316078] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   34.587716] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   34.890511] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   35.172186] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   35.574141] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   35.845726] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   36.117200] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   36.389892] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   36.661742] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   36.933498] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   37.215787] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   37.497691] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   37.779514] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   38.201541] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   38.473221] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   38.755352] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   39.027209] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   39.299240] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   39.581288] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   39.883289] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   40.165242] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   40.447039] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   40.859218] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   41.131020] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   41.402536] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   41.674897] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   41.946467] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   42.218638] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   42.490440] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   42.762753] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   45.969641] C0 [    kworker/u:1] PM: Some devices failed to suspend
+[   46.224299] C0 [    kworker/u:1] PM: Some devices failed to suspend
+[   61.064558] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   61.345854] C1 [    kworker/u:4] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   61.628028] C1 [    kworker/u:4] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   61.909842] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   62.191687] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   62.473549] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   62.755385] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   63.167072] C0 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   63.449121] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   63.730774] C0 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   64.003074] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   64.274655] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   64.547145] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   64.829076] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   65.110923] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   65.392871] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   65.804981] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   66.076885] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   66.348843] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   66.620746] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   66.892391] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   67.164597] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   67.445859] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   67.718280] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   67.990425] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   68.402654] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   68.694644] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   68.986402] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   69.267984] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   69.550115] C1 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   69.831943] C1 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   70.114043] C1 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   70.396008] C1 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   70.667603] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   71.089622] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   71.361765] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   71.633928] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   71.905660] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   72.177386] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   72.449103] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   72.720994] C1 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   73.003512] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   73.275137] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   73.696863] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   73.969397] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   74.241292] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   74.513135] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   74.784271] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   75.057139] C0 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   75.328273] C1 [    kworker/u:7] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   75.600871] C1 [    kworker/u:4] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   75.872851] C0 [    kworker/u:4] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   76.294575] C0 [    kworker/u:4] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   76.566428] C0 [    kworker/u:4] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   76.838706] C0 [    kworker/u:4] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   77.109986] C0 [    kworker/u:4] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   77.382353] C1 [    kworker/u:4] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   77.654439] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   77.925821] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   78.198144] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   78.469939] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   78.892577] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   79.164362] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   79.436108] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   79.708386] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   79.979949] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   80.251597] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   80.523640] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   80.795567] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   81.067637] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   81.479225] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   81.751129] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   82.022751] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   82.295419] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   82.567078] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   82.849512] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   83.131503] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   83.413401] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   83.695422] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   84.107399] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   84.379164] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   84.650922] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   84.922870] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   85.194831] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   85.466720] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   85.759034] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   86.040636] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   86.312904] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   86.724959] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   86.996718] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   87.289293] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   87.560795] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   87.832548] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   88.104013] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   88.376351] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   88.658283] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   88.930062] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   89.362662] C0 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   89.644226] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   89.915884] C1 [    kworker/u:6] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   90.197524] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   90.470022] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   90.741333] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   91.033603] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   91.305550] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   91.586942] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   91.999760] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   92.281677] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   92.573735] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   92.845253] C1 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   93.127518] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   93.399154] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   93.671175] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   93.942941] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   94.214246] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   94.627199] C0 [    kworker/u:5] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   94.909242] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   95.191293] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   95.473166] C0 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   95.744885] C0 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   96.027102] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   96.298862] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   96.570031] C0 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   96.852658] C1 [    kworker/u:0] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   97.274725] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   97.556607] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   97.838568] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   98.110400] C1 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   98.402807] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   98.684098] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   98.966008] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   99.238324] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   99.509615] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[   99.942246] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  100.224329] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  100.496247] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  100.768126] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  100.903570] C3 [    ia_watchdog] intel_scu_watchdog: intel_scu_watchdog: watchdog_keepalive
+[  101.039845] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  101.311583] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  101.583517] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  101.855433] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  102.127409] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  102.539695] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  102.811810] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  103.083600] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  103.355526] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  103.627072] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  103.898543] C0 [    kworker/u:2] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  104.170956] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  104.442900] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  104.714786] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  105.137223] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  105.408728] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  105.680697] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  105.952964] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  106.224012] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  106.496046] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  106.768606] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  107.040456] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  107.322698] C1 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  107.734836] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  108.006379] C1 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  108.287857] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  108.560174] C1 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  108.832119] C1 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  109.114039] C1 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  109.396246] C1 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  109.667590] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  109.940148] C1 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  110.362168] C0 [    kworker/u:8] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  110.644247] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  110.925862] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  111.207891] C1 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  111.479524] C0 [    kworker/u:1] penwell_otg 0000:00:02.3: PHY can't enter low power mode when UDC is in idle mode
+[  114.281919] C0 [        healthd] SysRq : Emergency Remount R/O
+[  114.282427] C0 [        healthd] intel_scu_watchdog: intel_scu_watchdog: watchdog_keepalive
+[  114.596993] C0 [        healthd] Restarting system.
+
+
+                               IA32 CPU Firmware                              
+      Copyright (C) 1999-2013, Intel Corporation. All rights reserved.
+
+      
+7[0;23r[24;75H[1K[24;1H[1mIntel(R) Atom(TM) Z2560 CPU FW 00.73 (INTELFDK)[0m8------------------------------>FOR Teewinot ONLY<-----------------------------
+******************************************************************************
+************** Customer release based on Rel 00.49 + TWN changes**************
+**************** BZ=115220 Bypass time/date check for product ****************
+****************** BZ=118523 Cold Reset on ExecuteOS failure *****************
+****** BZ=124478[TW 346-500-676] Request for logging enhancement in IAFW *****
+************* BZ=127192 Disable Active Refresh during JEDEC Init *************
+******************* BZ=none include ucode patch M013065110E ******************
+**************************** New in this code drop ***************************
+***** BZ=none Changed trace to match TWN RAMDUMP application requirement *****
+*************** BZ=none Removed UART and PTI HW output methods ***************
+******** Short circuiting the emInit when a fixed battery is detected. *******
+********************* Customization done 201308261512 MST ********************
+******************************************************************************
+[37;41m******************************INTEL CONFIDENTIAL******************************
+[0m
+0x1E, 0x20, 0x21, 
+
+ERROR:::::SPID Not Programmed, Fake data being used based on IFWI version
+
+
+
+ERROR:::::SPID FRU Not Programmed, Fake data being used based on IFWI version
+
+
+OSC_CLK3 defaults only
+0x22, 
+OEM board; Skip spidBasedPanelNdxUpdate
+0x23, 
+Forced Battery via SMIP FPO Bit 2
+0x28, 0x2A, 0x2B, in csSFIDevsEntries, HW Id 0x0019
+SFI Dev...PR3
+in csSFIGpioEntries, HW Id 0x0019
+
+SFIOEMBInit:tbl->spidTbl update
+0x2C, 0x2D, 0x2F PostCodes Done
+
+IA32 FW:       CPU v000.073/00.49; SUPP v000.073/00.49; VH: 000.081/00.51
+IA Timestamp:  2013.08.26:18.00 (INTELFDK)
+SCU FW:        ROM 177.000/B1.00; RT 033.048/21.30
+PUNIT FW:      v224.064/E0.40
+IFWI:          v249.086/F9.56
+PL:            0000010E
+Config & PCB:  OEM Platform, C, CLV+ B1, Micron (00,00) SR 4Gb 1067 1GB 
+               FHOB DW0/DW1: 00000104:00010140
+               I2C Expander: FFFFFFFC:0000000F
+               IA Options:   024020A1:00000000:03E00000:80005C00:00000101;0556
+               [OS HASH VERIFY] [EIST] [eMMC] [VALID BATT][WDT]
+
+Loading OS...
+pOsip = 1000000
+
+-->OSIP verified
+
+F5030000 FC030000
+
+FC030000 FA050000
+
+Boot path override selected OS image 0 (OS Attribute 0x00, Reboot Reason 0x00)
+FA050000 FA050000
+
+Splash disabled in GCT
+
+Splash display time: 2 ms
+-->Bootable OS image 0 found for requested type 0 (OSII attribute 0x00)
+-->Loading OS image 0 from eMMC block 0x00000032 to DRAM address 0x010FFE20
+-->Starting transfer of 0xA11 512-byte blocks to DRAM
+-->Done loading OS Image to DRAM
+-->platformConfigBuffer_pt.scuFhobDw0.osven != 0
+	-->osIndex: 0, Signed Image
+OS image 0 PASSED verify
+Booting MOS
+
+*********************************
+Starting command line:
+-init=/init pci=noearly console=ttyMFD2 console=ttyS0 console=logk0 earlyprintk=nologger loglevel=8 hsu_dma=7 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=ctp_pr1 emmc_ipanic.ipanic_part_number=1 ip=50.0.0.2:50.0.0.1::255.255.255.0::usb0:on hsu_rx_wa g_android.fastboot=1 droidboot.scratch=100
+-
+
+OSNIB.wakesrc = 0x5
+OSNIB.RR = 0x0
+
+Battery is high enough for normal boot
+3589mV > 0mV
+
+Ending command line:
+-init=/init pci=noearly console=ttyMFD2 console=ttyS0 console=logk0 earlyprintk=nologger loglevel=8 hsu_dma=7 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=ctp_pr1 emmc_ipanic.ipanic_part_number=1 ip=50.0.0.2:50.0.0.1::255.255.255.0::usb0:on hsu_rx_wa g_android.fastboot=1 droidboot.scratch=100 androidboot.wakesrc=05 androidboot.mode=main-
+*********************************
+
+WDT aka Timer7 setup
+Warn Duration for Timer7: 00 seconds
+Start Timer7 bit 0 -> 1: 00000000000000000000000000000000
+[0;24r[24;1H[2KM
+Calling OS entry point --> 0x01101000 ...
+
+Using NEW OSHOB structure size = 176 bytes
+OSNIB size = 32 bytes OEMNIB size = 64 bytes
+0xFF00_0510 FullChipRegister: Status flag = 0x0
+0xFF10_0510 SCFabricRegister: Status flag = 0x0
+RTCSC2 = 0x11,	 RTCSC3 = 0xcf,	 RTCSC4 = 0xcf
+Watchdog Disabled! 
+usb is connected, skip to set uart path
+__stmpe811_write : fail
+MUIC: CONTROL1:0x00
+MUIC: CONTROL1:0x00
+MUIC: CONTROL2:0x3e
+MUIC: CONTROL2:0x3e
+[SCU_IPC_DEBUG] board ID: NOT_IDENTIFIED(8)
+VERSION : 0xa501
+mmc_read_ext_csd : ext_csd_rev = 0x5
+cardtype: 0x00000007
+SB_MMC_HS_52MHZ_1_8V_3V_IO
+mmc->card_caps: 0x00000311
+mmc->host_caps: 0x00000311
+!!!Enter 8 Bit mode.!!!
+clt_mmc_init: mmc->capacity = 0x1d58000
+[BOOT] RESETIRQ1=0x00 RESETIRQ2=0x00 (interrupt tree)
+[BOOT] SCU_TR=0x00020013 IA_TR=0xffffffff (oshob)
+[BOOT] RR=0x00 WD=0x00 ALARM=0x00 (osnib)
+[BOOT] WAKESRC=0x05 RESETIRQ1=0x01 RESETIRQ2=0x00 (osnib)
+
+Samsung S-Boot 4.0 for GT-P5200 (Jul 21 2014 - 17:57:55)
+
+CLT(EVT 0.0) / 1024MB / 15024MB / Rev 8 / P5200XXUBNG2
+
+pit_check_signature (PIT) valid.
+initialize_ddi_data: usable! (1:0xe)
+PARAM ENV VERSION: v1.0..
+pressed_key = 0x0
+clt_charger_init : [battery] using external charger init(3)
+STATUS1:0x3f, 2:0x43
+vbvolt=0x1, chgtyp=0x3, adc=0x1f, ret=0x1031f
+[check_cable_type] : Output of USB Charger Detection 3
+[max77693_init_charger] : attached device(0x02) :  TA
+clt_max77693_set_charger_state: chg_cnfg_02 (0xbf) -> (0x1f) -> (0x1f)
+clt_max77693_set_charger_state: chg_cnfg_03 (0x26) -> (0x00) -> (0x00)
+clt_max77693_set_charger_state: chg_cnfg_04 (0xdd) -> (0xdd) -> (0xdd)
+clt_max77693_set_charger_state: chg_cnfg_09 (0x19) -> (0x64) -> (0x64)
+set_charger_state : buck(1), chg(0), reg(0x04)
+init_fuel_gauge: Start!!
+[0] get_adc_battid() = 92
+[1] get_adc_battid() = 91
+[2] get_adc_battid() = 92
+get_adc_battid() = 91
+init_fuel_gauge: Battery type : SDI
+init_fuel_gauge: Already initialized (0x32cd, SDI type)
+STATUS1:0x3f, 2:0x43
+vbvolt=0x1, chgtyp=0x3, adc=0x1f, ret=0x1031f
+clt_charger_init : cable_type(0x02)
+set_charger_state : buck(1), chg(1), reg(0x05)
+intel_scu_ipc_cmd_oemnib : done => 0x12345670
+check_reboot_cmd: nCmd = 12345670 ... skip check_reboot_cmd
+debug level = 0x4f4c
+disable max77693 manual reset
+clt_max77693_disable_manual_reset: set max77693 MANCTRL1 val = 0x4
+clt_max77693_disable_manual_reset: read max77693 MANCTRL1 val = 0x4
+disable PMIC cod off triggered by PWRBTN#: 6
+intel_scu_ipc_cmd_oemnib : done => 0x0
+check_download: 0
+Is_lpm_boot : boot-mode saved in param = 0
+Is_lpm_boot : jig-on level = 0, ignore...
+STATUS1:0x3f, 2:0x43
+vbvolt=0x1, chgtyp=0x3, adc=0x1f, ret=0x1031f
+stat=0x1031f, adc=0x1f, chg=0x3, vbvolt=1, pinLevel=1
+fuel_gauge_read_vcell: VCELL(3636), data(0xb5d0)
+fuel_gauge_read_soc: SOC(1), data(0x01db)
+check_low_battery : rb=0 jig=0
+check_low_battery : v=3636 soc=1
+skip check low battery
+scr_draw_image: draw 'logo.jpg'...
+read 'logo.jpg'(105420) completed.
+<start_checksum:355>CHECKSUM_HEADER_SECTOR :4096
+<start_checksum:357>offset:6144, size:6296
+<start_checksum:361>CHECKSUM_HEADER_INFO : NeedChecksum:0 PartNo:27
+Not Need Movinand Checksum
+Movinand Checksum Confirmation Pass
+load_kernel: loading boot image from 106496..
+total size : 6582272
+pit_check_signature (BOOT) invalid.
+Set invalid sign flag
+if_ddi_data: succeeded. (1:0xe)
+ipc_mb opcode = 0x84, status 0x01 ostype 0x00 oper 0x00
+BOOT_MAGIC == ANDROID!
+CMDLINE LENGTH = 538
+CMDLINE = init=/init console=sec_log_buf kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=santos103g sec_debug.level=0 loglevel=0 androidboot.debug_level=0x4f4c vmalloc=224m sec_log=2052K@0x10000000 sec_bootfb=0x3f000000 lcd_panel_id=0 androidboot.revision=8 switch_sel=3 cordon=437b6665a0a407b91e7f4e4e40acc6f4 connie=GT-P5200_OPEN_EUR_fbe350f548df031729e5115341475198 androidboot.emmc_checksum=3 androidboot.bootloader=P5200XXUBNG2 androidboot.serialno=3200a20b92309000 snd_soc_core.pmdown_time=1000 jig=0
+Bootstub: map SFI MMAP to e820 table
+add mmap: 0x00000000 0x00098000 1
+add mmap: 0x00100000 0x00580000 2
+add mmap: 0x00680000 0x00680000 1
+add mmap: 0x00d00000 0x00300000 2
+add mmap: 0x01000000 0x35ff0000 1
+add mmap: 0x36ff0000 0x0090d000 2
+add mmap: 0x378fd400 0x00100000 2
+add mmap: 0x379fd400 0x02602000 1
+add mmap: 0x3a000000 0x02200000 2
+add mmap: 0x3c200000 0x02d00000 1
+add mmap: 0x3ef00000 0x00100000 2
+add mmap: 0x3f000000 0x01000000 2
+add mmap: 0xfec00000 0x00001000 2
+add mmap: 0xfee00000 0x00001000 2
+add mmap: 0xff000000 0x01000000 2
+IMR6 start=0x3a000000 end=0x3c1fffff
+new mmap: 0x3a000000 0x02200000 2
+IMR7 start=0x00100000 end=0x0067ffff
+new mmap: 0x00100000 0x00580000 2
+Final E820 table:
+e820: 0x00000000 0x00098000 1
+e820: 0x00100000 0x00580000 2
+e820: 0x00680000 0x00680000 1
+e820: 0x00d00000 0x00300000 2
+e820: 0x01000000 0x35ff0000 1
+e820: 0x36ff0000 0x0090d000 2
+e820: 0x378fd400 0x00100000 2
+e820: 0x379fd400 0x02602000 1
+e820: 0x3a000000 0x02200000 2
+e820: 0x3c200000 0x02d00000 1
+e820: 0x3ef00000 0x00100000 2
+e820: 0x3f000000 0x01000000 2
+e820: 0xfec00000 0x00001000 2
+e820: 0xfee00000 0x00001000 2
+e820: 0xff000000 0x01000000 2
+Final mb_mmap table:
+mb_mmap: 0x00000000 0x00098000 1
+mb_mmap: 0x00100000 0x00580000 0
+mb_mmap: 0x00680000 0x00680000 1
+mb_mmap: 0x00d00000 0x00300000 0
+mb_mmap: 0x01000000 0x35ff0000 1
+mb_mmap: 0x36ff0000 0x0090d000 0
+mb_mmap: 0x378fd400 0x00100000 0
+mb_mmap: 0x379fd400 0x02602000 1
+mb_mmap: 0x3a000000 0x02200000 0
+mb_mmap: 0x3c200000 0x02d00000 1
+mb_mmap: 0x3ef00000 0x00100000 0
+mb_mmap: 0x3f000000 0x01000000 0
+mb_mmap: 0xfec00000 0x00001000 0
+mb_mmap: 0xfee00000 0x00001000 0
+mb_mmap: 0xff000000 0x01000000 0
+Using bzImage to boot
+The SBOOT WP is done!!!
+[MMC] Set write protection (boot partition)
+mmc_bootpart_poweron_wp : boot partition WP OK
+Relocating initramfs to high memory ...
+usb is connected, skip to set uart path
+0xFF00_0510 FullChipRegister: Status flag = 0x0
+0xFF10_0510 SCFabricRegister: Status flag = 0x0
+Jump to kernel 32bit entry ...0x05003c00
+[    0.292572] C0 [      swapper/0] SPID not found in kernel command line.
+[    0.574310] C1 [      swapper/0] pci 0000:00:03.1: unsupported PM cap regs version (4)
+[    0.596764] C2 [      swapper/0] PMU DRIVER BEFORE PROBE
+[    0.656623] C1 [      swapper/1] unexpected IRQ trap at vector 15d
+[    2.171889] C3 [    ia_watchdog] intel_scu_watchdog: intel_scu_watchdog: intel_scu_stop
+[    2.789833] C2 [      swapper/0] Request for hsu(64) GPIO fails
+[    2.790529] C2 [      swapper/0] Request for hsu(67) GPIO fails
+[    3.029013] C2 [      swapper/0] ehci_hcd 0000:00:06.5: can't setup
+[    3.029344] C2 [      swapper/0] ehci_hcd 0000:00:06.5: init 0000:00:06.5 fail, -19
+[    3.919785] C2 [      swapper/0] i2c_dw_pci_probe: invalid bus index 259
+[    3.925224] C3 [      swapper/0] i2c_dw_pci_probe: invalid bus index 261
+[    3.977840] C2 [      swapper/0] i2c i2c-9: sendbytes: NAK bailout.
+[    3.977879] C2 [      swapper/0] Failed to stmpe811 write, reg: 3
+[    4.146088] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    4.210726] C2 [      swapper/0] tc35876x_vid_detect: It seems to use Intel Stand-alone Bootloader...
+[    4.371564] C2 [      swapper/0] bh1730fvc_test_device : POWER ON 0, 3
+[    4.371582] C2 [      swapper/0] bh1730fvc_test_device : slave addr : 0x29
+[    4.387769] C2 [      swapper/0] power_supply sec-fuelgauge: driver failed to report `status' property: 4294967274
+[    4.400564] C2 [    kworker/2:1] power_supply sec-fuelgauge: driver failed to report `status' property: 4294967274
+[    4.565332] C1 [      swapper/0] power_supply sec-charger: driver failed to report `power_now' property: 4294967274
+[    4.575868] C1 [    kworker/1:0] power_supply sec-charger: driver failed to report `power_now' property: 4294967274
+[    5.043563] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    5.047578] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    5.130833] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    5.141463] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[    7.001004] C3 [           init] init: property_set("ro.boot.hardware", "santos103g") failed
+[    7.152960] C3 [           init] init: waitpid failed: No child processes
+[    7.815397] C1 [        ueventd] power_supply sec-charger: driver failed to report `power_now' property: 4294967274
+[    7.823295] C1 [        ueventd] power_supply sec-fuelgauge: driver failed to report `status' property: 4294967274
+[    7.879457] C2 [           init] init: /dev/hw_random not found
+[    7.879680] C2 [           init] init: console init failed. Open on Console device  failed(No such device)
+[    8.168174] C2 [           init] init: using deprecated syntax for specifying property 'ro.serialno', use ${name} instead
+[    8.250379] C2 [           init] init: /dev/hw_random not found
+[    8.471496] C3 [           init] F2FS-fs (mmcblk0p9): Can't find valid F2FS filesystem in 1th superblock
+[    8.471953] C3 [           init] F2FS-fs (mmcblk0p9): Can't find valid F2FS filesystem in 2th superblock
+[    8.471981] C3 [           init] F2FS-fs (mmcblk0p9): Can't find valid F2FS filesystem in 1th superblock
+[    8.471999] C3 [           init] F2FS-fs (mmcblk0p9): Can't find valid F2FS filesystem in 2th superblock
+[    9.517218] C1 [           init] fs_mgr: mount_with_alternatives(): Mounted /dev/block/pci/pci0000:00/0000:00:01.0/by-name/USERDATA on /data with fs_type=ext4 instead of f2fs
+[    9.526562] C1 [           init] F2FS-fs (mmcblk0p6): Can't find valid F2FS filesystem in 1th superblock
+[    9.526860] C1 [           init] F2FS-fs (mmcblk0p6): Can't find valid F2FS filesystem in 2th superblock
+[    9.526884] C1 [           init] F2FS-fs (mmcblk0p6): Can't find valid F2FS filesystem in 1th superblock
+[    9.526902] C1 [           init] F2FS-fs (mmcblk0p6): Can't find valid F2FS filesystem in 2th superblock
+[    9.743819] C3 [           init] fs_mgr: mount_with_alternatives(): Mounted /dev/block/pci/pci0000:00/0000:00:01.0/by-name/CACHE on /cache with fs_type=ext4 instead of f2fs
+[   10.311367] C3 [           init] init: do_start: Service debuggerd64 not found
+[   12.512415] C1 [            cbd] cbd: /check_debug_level: debug level=1, cp_debug=0
+[   12.513161] C1 [            cbd] cbd: /main: Modem type = 1
+[   12.513186] C1 [            cbd] cbd: /main: Boot link = 0
+[   12.513200] C1 [            cbd] cbd: /main: Main link = 0
+[   12.513237] C1 [            cbd] cbd: /start_xmm626x_boot: start
+[   12.518294] C1 [            cbd] cbd: /update_cp_imgmap: CP img map from cp binary
+[   12.518349] C1 [            cbd] mif: misc_open: iod = umts_boot0
+[   12.572259] C3 [           init] init: using deprecated syntax for specifying property 'ro.product.manufacturer', use ${name} instead
+[   12.572470] C3 [           init] init: using deprecated syntax for specifying property 'ro.product.model', use ${name} instead
+[   12.577787] C3 [           init] init: SELinux: Could not get canonical path for /sys/block/sda/queue/scheduler restorecon: No such file or directory.
+[   12.577990] C3 [           init] init: SELinux: Could not get canonical path for /sys/block/sde/queue/scheduler restorecon: No such file or directory.
+[   12.578284] C3 [           init] init: SELinux: Could not get canonical path for /sys/block/dm-0/queue/scheduler restorecon: No such file or directory.
+[   12.580753] C3 [           init] init: service 'console' requires console
+[   12.584264] C3 [           init] init: cannot find '/system/bin/update_verifier' (No such file or directory), disabling 'exec 2 (/system/bin/update_verifier)'
+[   12.708780] C2 [            cbd] cbd: /mipi_xmit_boot: modem on/reset done
+[   12.709340] C2 [            cbd] cbd: /mipi_xmit_atat: sent atat 0
+[   12.809596] C0 [            cbd] cbd: /mipi_xmit_atat: sent atat 1
+[   12.809896] C0 [            cbd] cbd: /mipi_xmit_atat: got all atat ack
+[   12.809914] C0 [            cbd] cbd: /mipi_xmit_atat: got all atat ack
+[   12.820951] C0 [            cbd] cbd: /prepare_image: Load PSIRAM img size=57344
+[   12.821760] C0 [            cbd] cbd: /mipi_xmit_psi: send psi header(0x3000e0ff) done
+[   12.880183] C1 [            cbd] cbd: /mipi_xmit_psi: send psi img(57344) done
+[   12.880454] C1 [            cbd] cbd: /mipi_xmit_psi: send psi crc done
+[   12.880716] C1 [            cbd] cbd: /mipi_xmit_psi: get crc ack 1 done
+[   12.880743] C1 [            cbd] cbd: /mipi_xmit_psi: get crc ack 2 done
+[   12.885051] C1 [            cbd] cbd: /mipi_xmit_psi: get psi running ack done
+[   12.885074] C1 [            cbd] cbd: /mipi_xmit_psi: xmit psi done
+[   12.885089] C1 [            cbd] cbd: /mipi_xmit_psi: xmit psi done
+[   12.885105] C1 [            cbd] cbd: /mipi_xmit_boot: xmit boot done
+[   12.885120] C1 [            cbd] cbd: /mipi_xmit_boot: xmit boot done
+[   12.885291] C1 [            cbd] cbd: /mipi_LoadAndExecuteEBL: send cmd_load_exe_EBL done
+[   12.885511] C1 [            cbd] cbd: /mipi_LoadAndExecuteEBL: get cmd_load_exe_EBL ack done
+[   12.885529] C1 [            cbd] cbd: /mipi_LoadAndExecuteEBL: send load_exe_cmd done
+[   12.885544] C1 [            cbd] cbd: /mipi_LoadAndExecuteEBL: send load_exe_cmd done
+[   12.886313] C1 [            cbd] cbd: /prepare_image: Load EBL img size=102400
+[   12.886451] C1 [            cbd] cbd: /mipi_xmit_ebl: send ebl len done
+[   12.886687] C1 [            cbd] cbd: /mipi_xmit_ebl: get ebl len ack done
+[   12.898012] C1 [            cbd] cbd: /mipi_xmit_ebl: send ebl img(102401) done
+[   12.928925] C0 [            cbd] cbd: /mipi_xmit_ebl: get ebl crc ack done
+[   12.928950] C0 [            cbd] cbd: /mipi_xmit_ebl: xmit ebl done
+[   12.928966] C0 [            cbd] cbd: /mipi_xmit_ebl: xmit ebl done
+[   12.947635] C0 [            cbd] cbd: /mipi_set_ebl: get bootloader info len 76
+[   12.947779] C0 [            cbd] cbd: /mipi_set_ebl: get bootloader info done : SP6260_20.5_M1S1
+[   12.948199] C0 [            cbd] cbd: /mipi_set_ebl: ReqSetProtConf cmd done
+[   12.948219] C0 [            cbd] cbd: /mipi_set_ebl: xmit set ebl done
+[   12.948236] C0 [            cbd] cbd: /mipi_set_ebl: xmit set ebl done
+[   12.949591] C0 [            cbd] cbd: /prepare_image: Load SECPACK img size=2048
+[   13.160962] C1 [            cbd] cbd: /prepare_image: Load MAIN img size=10319872
+[   13.161003] C1 [            cbd] cbd: /mipi_xmit_image: execute ReqFlashSetAddress cmd addr = 0x60300000
+[   13.161407] C1 [            cbd] cbd: /mipi_xmit_image: execute_command ReqFlashSetAddress done
+[   13.161430] C1 [            cbd] cbd: /mipi_xmit_image: whole size: 0x9d7800
+[   13.478513] C2 [           rild] audit: rate limit exceeded
+[   13.530533] C2 [           rild] mif: misc_open: iod = umts_boot0
+[   13.530763] C2 [           rild] mif: misc_release: iod = umts_boot0
+[   13.530852] C2 [           rild] mif: misc_open: iod = umts_boot0
+[   13.572603] C2 [        healthd] healthd: wakealarm_init: timerfd_create failed
+[   15.305400] C2 [            cbd] cbd: /mipi_xmit_image: execute_command ReqFlashWriteBlock Done : 10319872
+[   15.308490] C2 [            cbd] cbd: /mipi_xmit_image: xmit main img done
+[   15.308512] C2 [            cbd] cbd: /mipi_xmit_image: xmit main img done
+[   15.308551] C2 [            cbd] cbd: /check_nv_file: rild check nv done
+[   15.308816] C2 [            cbd] cbd: /check_nv_file: check nv validity....
+[   15.308842] C2 [            cbd] cbd: /mipi_xmit_nv: check_nv_file done
+[   15.315388] C2 [            cbd] cbd: /prepare_image: Load nvdata.bin img size=2097152
+[   15.315429] C2 [            cbd] cbd: /mipi_xmit_nv: Execute ReqFlashSetAddress cmd addr = 0x60e80000
+[   15.315973] C2 [            cbd] cbd: /mipi_xmit_nv: execute_command ReqFlashSetAddress done
+[   15.315994] C2 [            cbd] cbd: /mipi_xmit_nv: whole size: 0x200000
+[   15.777067] C0 [            cbd] cbd: /mipi_xmit_nv: execute_command ReqFlashWriteBlock Done : 2097152
+[   15.777780] C0 [            cbd] cbd: /mipi_xmit_nv: xmit nv done
+[   15.777798] C0 [            cbd] cbd: /mipi_xmit_nv: xmit nv done
+[   15.778258] C2 [            cbd] cbd: /mipi_xmit_main: xmit main done
+[   15.778281] C2 [            cbd] cbd: /mipi_xmit_main: xmit main done
+[   15.778298] C2 [            cbd] mif: misc_release: iod = umts_boot0
+[   15.786270] C2 [            cbd] cbd: /main: Boot up process done!!!
+[   15.786332] C2 [            cbd] cbd: /status_loop: CP status_loop start (modem = 1)
+[   15.786541] C2 [            cbd] mif: misc_open: iod = umts_boot0
+[   15.787433] C2 [           init] init: avc:  denied  { set } for property=ril.cbd.reset_done pid=2154 uid=1001 gid=1001 scontext=u:r:cpboot-daemon:s0 tcontext=u:object_r:radio_prop:s0 tclass=property_service permissive=1
+[   15.788511] C2 [            cbd] cbd: /status_loop: Wait event from modem 1
+[   15.982436] C1 [      swapper/1] mif: io_dev_modem_state_changed: modem state changed. (iod: umts_ipc0, state: 4)
+[   15.982446] C1 [      swapper/1] mif: io_dev_modem_state_changed: modem state changed. (iod: umts_boot0, state: 4)
+[   16.531459] C3 [           rild] mif: misc_release: iod = umts_boot0
+[   17.531554] C3 [           rild] mif: misc_open: iod = umts_ipc0
+[   17.531628] C3 [           rild] mif: misc_open: iod = umts_rfs0
+[   19.862252] C0 [  system_server] mxt1188s_ts 2-004a: mxt_start. but touch already on
+[   31.697170] C2 [           init] init: avc:  denied  { set } for property=media.camera.facing pid=2177 uid=1013 gid=1005 scontext=u:r:mediaserver:s0 tcontext=u:object_r:default_prop:s0 tclass=property_service permissive=1
+[   40.077644] C3 [ wpa_supplicant] WLDEV-ERROR) wldev_set_country : wldev_set_country: set country for IT as IT rev 1
+[   40.905613] C1 [           init] init: Service exec 3 (/sbin/magisk) does not have a SELinux domain defined.
+[   49.636885] C3 [    ia_watchdog] intel_scu_watchdog: intel_scu_watchdog: watchdog_keepalive
+[   54.167660] C1 [    kworker/u:2] mxt1188s_ts 2-004a: mxt_stop. but touch already off
+[   76.452956] C2 [irq/318-mxt1188] mxt1188s_ts 2-004a: ATCH: Coin Timer elapsed
+[   77.173090] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[   77.341217] C2 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[   77.357785] C2 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[   77.423276] C2 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[   77.435526] C2 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[   82.033346] C1 [.BOOT_COMPLETED] binder: 2722: binder_alloc_buf size 1056768 failed, no address space
+[   84.114392] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: ATCH: Coin Timer elapsed
+[   90.733833] C3 [    ia_watchdog] intel_scu_watchdog: intel_scu_watchdog: watchdog_keepalive
+[   93.965918] C3 [    kworker/u:0] mxt1188s_ts 2-004a: mxt_stop. but touch already off
+[   96.754059] C3 [irq/318-mxt1188] mxt1188s_ts 2-004a: Overflow detected
+[   97.517669] C0 [       Thread-2] audit: rate limit exceeded
+[  111.615426] C1 [    kworker/u:4] mxt1188s_ts 2-004a: mxt_stop. but touch already off
+[  129.940368] C1 [irq/318-mxt1188] mxt1188s_ts 2-004a: ATCH: Coin Timer elapsed
+[  130.930026] C1 [irq/318-mxt1188] mxt1188s_ts 2-004a: ATCH: Calgood Timer elapsed
+[  130.930935] C1 [irq/318-mxt1188] mxt1188s_ts 2-004a: Abnormal Case enabled
+[  131.329660] C3 [    ia_watchdog] intel_scu_watchdog: intel_scu_watchdog: watchdog_keepalive
+[  131.353238] C2 [     AudioOut_D] snd_intel_sst: setting pp param
+[  131.374488] C2 [     AudioOut_D] snd_intel_sst: setting pp param
+[  132.897674] C1 [irq/318-mxt1188] mxt1188s_ts 2-004a: BigPalm Case Disabled
+[  137.955663] C3 [     AudioOut_D] snd_intel_sst: setting pp param
+[  143.087482] C2 [     AudioOut_D] snd_intel_sst: setting pp param
+[  143.089115] C0 [     AudioOut_D] snd_intel_sst: setting pp param
+[  146.417353] C0 [     AudioOut_D] snd_intel_sst: setting pp param
+[  154.305069] C0 [     AudioOut_D] snd_intel_sst: setting pp param
+[  154.307500] C0 [     AudioOut_D] snd_intel_sst: setting pp param
+[  157.624930] C1 [     AudioOut_D] snd_intel_sst: setting pp param
+[  161.936534] C1 [     AudioOut_D] snd_intel_sst: setting pp param
+[  161.938031] C2 [     AudioOut_D] snd_intel_sst: setting pp param
+[  169.363907] C0 [     AudioOut_D] snd_intel_sst: setting pp param
+[  172.426699] C3 [    ia_watchdog] intel_scu_watchdog: intel_scu_watchdog: watchdog_keepalive
+[  175.374440] C2 [irq/36-msic_vdd] msic_vdd msic_vdd: no more interrupt to process
+[  176.370915] C1 [     AudioOut_D] snd_intel_sst: setting pp param
+[  176.372532] C2 [     AudioOut_D] snd_intel_sst: setting pp param
+[  177.295071] C2 [irq/36-msic_vdd] msic_vdd msic_vdd: no more interrupt to process
+[  180.963940] C0 [     AudioOut_D] snd_intel_sst: setting pp param
+[  181.672735] C0 [     AudioOut_D] snd_intel_sst: setting pp param
+[  181.736095] C0 [     AudioOut_D] snd_intel_sst: setting pp param
+[  185.573401] C3 [     AudioOut_D] snd_intel_sst: setting pp param
+[  212.965488] C3 [     AudioOut_D] snd_intel_sst: setting pp param
+[  212.967367] C3 [     AudioOut_D] snd_intel_sst: setting pp param
+[  216.292607] C1 [     AudioOut_D] snd_intel_sst: setting pp param
+[  219.537831] C3 [    ia_watchdog] intel_scu_watchdog: intel_scu_watchdog: watchdog_keepalive
+[  231.537995] C1 [           init] SysRq : Emergency Remount R/O
+[  231.640367] C3 [           init] intel_scu_watchdog: intel_scu_watchdog: watchdog_keepalive
+[  231.641698] C0 [           main] mif: io_dev_modem_state_changed: modem state changed. (iod: umts_ipc0, state: 0)
+[  231.641712] C0 [           main] mif: io_dev_modem_state_changed: modem state changed. (iod: umts_boot0, state: 0)
+[  232.381668] C0 [           init] Restarting system with command 'recovery'.
+
+
+                               IA32 CPU Firmware                              
+      Copyright (C) 1999-2013, Intel Corporation. All rights reserved.
+
+      
+7[0;23r[24;75H[1K[24;1H[1mIntel(R) Atom(TM) Z2560 CPU FW 00.73 (INTELFDK)[0m8------------------------------>FOR Teewinot ONLY<-----------------------------
+******************************************************************************
+************** Customer release based on Rel 00.49 + TWN changes**************
+**************** BZ=115220 Bypass time/date check for product ****************
+****************** BZ=118523 Cold Reset on ExecuteOS failure *****************
+****** BZ=124478[TW 346-500-676] Request for logging enhancement in IAFW *****
+************* BZ=127192 Disable Active Refresh during JEDEC Init *************
+******************* BZ=none include ucode patch M013065110E ******************
+**************************** New in this code drop ***************************
+***** BZ=none Changed trace to match TWN RAMDUMP application requirement *****
+*************** BZ=none Removed UART and PTI HW output methods ***************
+******** Short circuiting the emInit when a fixed battery is detected. *******
+********************* Customization done 201308261512 MST ********************
+******************************************************************************
+[37;41m******************************INTEL CONFIDENTIAL******************************
+[0m
+0x1E, 0x20, 0x21, 
+
+ERROR:::::SPID Not Programmed, Fake data being used based on IFWI version
+
+
+
+ERROR:::::SPID FRU Not Programmed, Fake data being used based on IFWI version
+
+
+OSC_CLK3 defaults only
+0x22, 
+OEM board; Skip spidBasedPanelNdxUpdate
+0x23, 
+Forced Battery via SMIP FPO Bit 2
+0x28, 0x2A, 0x2B, in csSFIDevsEntries, HW Id 0x0019
+SFI Dev...PR3
+in csSFIGpioEntries, HW Id 0x0019
+
+SFIOEMBInit:tbl->spidTbl update
+0x2C, 0x2D, 0x2F PostCodes Done
+
+IA32 FW:       CPU v000.073/00.49; SUPP v000.073/00.49; VH: 000.081/00.51
+IA Timestamp:  2013.08.26:18.00 (INTELFDK)
+SCU FW:        ROM 177.000/B1.00; RT 033.048/21.30
+PUNIT FW:      v224.064/E0.40
+IFWI:          v249.086/F9.56
+PL:            0000010E
+Config & PCB:  OEM Platform, C, CLV+ B1, Micron (00,00) SR 4Gb 1067 1GB 
+               FHOB DW0/DW1: 00000104:00010140
+               I2C Expander: FFFFFFFC:0000000F
+               IA Options:   024020A1:00000000:03E00000:80005C00:00000101;0558
+               [OS HASH VERIFY] [EIST] [eMMC] [VALID BATT][WDT]
+
+Loading OS...
+pOsip = 1000000
+
+-->OSIP verified
+
+FA050000 FA050000
+
+FA050000 FA050000
+
+Boot path override selected OS image 0 (OS Attribute 0x00, Reboot Reason 0x00)
+FA050000 FA050000
+
+Splash disabled in GCT
+
+Splash display time: 2 ms
+-->Bootable OS image 0 found for requested type 0 (OSII attribute 0x00)
+-->Loading OS image 0 from eMMC block 0x00000032 to DRAM address 0x010FFE20
+-->Starting transfer of 0xA11 512-byte blocks to DRAM
+-->Done loading OS Image to DRAM
+-->platformConfigBuffer_pt.scuFhobDw0.osven != 0
+	-->osIndex: 0, Signed Image
+OS image 0 PASSED verify
+Booting MOS
+
+*********************************
+Starting command line:
+-init=/init pci=noearly console=ttyMFD2 console=ttyS0 console=logk0 earlyprintk=nologger loglevel=8 hsu_dma=7 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=ctp_pr1 emmc_ipanic.ipanic_part_number=1 ip=50.0.0.2:50.0.0.1::255.255.255.0::usb0:on hsu_rx_wa g_android.fastboot=1 droidboot.scratch=100
+-
+
+OSNIB.wakesrc = 0x5
+OSNIB.RR = 0x0
+
+Battery is high enough for normal boot
+3519mV > 0mV
+
+Ending command line:
+-init=/init pci=noearly console=ttyMFD2 console=ttyS0 console=logk0 earlyprintk=nologger loglevel=8 hsu_dma=7 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=ctp_pr1 emmc_ipanic.ipanic_part_number=1 ip=50.0.0.2:50.0.0.1::255.255.255.0::usb0:on hsu_rx_wa g_android.fastboot=1 droidboot.scratch=100 androidboot.wakesrc=05 androidboot.mode=main-
+*********************************
+
+WDT aka Timer7 setup
+Warn Duration for Timer7: 00 seconds
+Start Timer7 bit 0 -> 1: 00000000000000000000000000000000
+[0;24r[24;1H[2KM
+Calling OS entry point --> 0x01101000 ...
+
+Using NEW OSHOB structure size = 176 bytes
+OSNIB size = 32 bytes OEMNIB size = 64 bytes
+0xFF00_0510 FullChipRegister: Status flag = 0x0
+0xFF10_0510 SCFabricRegister: Status flag = 0x0
+RTCSC2 = 0x11,	 RTCSC3 = 0xcf,	 RTCSC4 = 0xcf
+Watchdog Disabled! 
+usb is connected, skip to set uart path
+__stmpe811_write : fail
+MUIC: CONTROL1:0x09
+MUIC: CONTROL1:0x09
+MUIC: CONTROL2:0x3e
+MUIC: CONTROL2:0x3e
+[SCU_IPC_DEBUG] board ID: NOT_IDENTIFIED(8)
+VERSION : 0xa501
+mmc_read_ext_csd : ext_csd_rev = 0x5
+cardtype: 0x00000007
+SB_MMC_HS_52MHZ_1_8V_3V_IO
+mmc->card_caps: 0x00000311
+mmc->host_caps: 0x00000311
+!!!Enter 8 Bit mode.!!!
+clt_mmc_init: mmc->capacity = 0x1d58000
+[BOOT] RESETIRQ1=0x00 RESETIRQ2=0x00 (interrupt tree)
+[BOOT] SCU_TR=0x00020013 IA_TR=0xffffffff (oshob)
+[BOOT] RR=0x00 WD=0x00 ALARM=0x00 (osnib)
+[BOOT] WAKESRC=0x05 RESETIRQ1=0x01 RESETIRQ2=0x00 (osnib)
+
+Samsung S-Boot 4.0 for GT-P5200 (Jul 21 2014 - 17:57:55)
+
+CLT(EVT 0.0) / 1024MB / 15024MB / Rev 8 / P5200XXUBNG2
+
+pit_check_signature (PIT) valid.
+initialize_ddi_data: usable! (1:0xe)
+PARAM ENV VERSION: v1.0..
+pressed_key = 0x0
+clt_charger_init : [battery] using external charger init(3)
+STATUS1:0x3f, 2:0x41
+vbvolt=0x1, chgtyp=0x1, adc=0x1f, ret=0x1011f
+[check_cable_type] : Output of USB Charger Detection 1
+[max77693_init_charger] : attached device(0x01) :  USB
+clt_max77693_set_charger_state: chg_cnfg_02 (0x8d) -> (0x1f) -> (0x1f)
+clt_max77693_set_charger_state: chg_cnfg_03 (0x26) -> (0x00) -> (0x00)
+clt_max77693_set_charger_state: chg_cnfg_04 (0xdd) -> (0xdd) -> (0xdd)
+clt_max77693_set_charger_state: chg_cnfg_09 (0x19) -> (0x19) -> (0x19)
+set_charger_state : buck(1), chg(0), reg(0x04)
+init_fuel_gauge: Start!!
+[0] get_adc_battid() = 92
+[1] get_adc_battid() = 91
+[2] get_adc_battid() = 91
+get_adc_battid() = 91
+init_fuel_gauge: Battery type : SDI
+init_fuel_gauge: Already initialized (0x32cd, SDI type)
+STATUS1:0x3f, 2:0x41
+vbvolt=0x1, chgtyp=0x1, adc=0x1f, ret=0x1011f
+clt_charger_init : cable_type(0x01)
+set_charger_state : buck(1), chg(1), reg(0x05)
+intel_scu_ipc_cmd_oemnib : done => 0x12345674
+check_reboot_cmd: nCmd = 12345674 ... setting REBOOT_MODE to 4
+clear_reboot_mode
+intel_scu_ipc_cmd_oemnib : done => 0x0
+debug level = 0x4f4c
+disable max77693 manual reset
+clt_max77693_disable_manual_reset: set max77693 MANCTRL1 val = 0x4
+clt_max77693_disable_manual_reset: read max77693 MANCTRL1 val = 0x4
+disable PMIC cod off triggered by PWRBTN#: 6
+intel_scu_ipc_cmd_oemnib : done => 0xffffffff
+check_download: 0
+mach_board_main: recovery set!(0x80000)
+Is_lpm_boot : boot-mode saved in param = 4
+Is_lpm_boot : jig-on level = 0, ignore...
+STATUS1:0x3f, 2:0x41
+vbvolt=0x1, chgtyp=0x1, adc=0x1f, ret=0x1011f
+stat=0x1011f, adc=0x1f, chg=0x1, vbvolt=1, pinLevel=1
+fuel_gauge_read_vcell: VCELL(3568), data(0xb270)
+fuel_gauge_read_soc: SOC(0), data(0x003b)
+check_low_battery : rb=4 jig=0
+check_low_battery : v=3568 soc=0
+skip check low battery
+scr_draw_image: draw 'logo.jpg'...
+read 'logo.jpg'(105420) completed.
+<start_checksum:355>CHECKSUM_HEADER_SECTOR :4096
+<start_checksum:357>offset:6144, size:6296
+<start_checksum:361>CHECKSUM_HEADER_INFO : NeedChecksum:0 PartNo:27
+Not Need Movinand Checksum
+Movinand Checksum Confirmation Pass
+Set debug level to low(4f4c)
+load_kernel: loading boot image from 147456..
+total size : 8671232
+pit_check_signature (RECOVERY) invalid.
+Set invalid sign flag
+if_ddi_data: succeeded. (1:0xe)
+ipc_mb opcode = 0x84, status 0x01 ostype 0x00 oper 0x00
+BOOT_MAGIC == ANDROID!
+CMDLINE LENGTH = 558
+CMDLINE = init=/init console=sec_log_buf kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=santos103g sec_debug.level=0 loglevel=0 androidboot.debug_level=0x4f4c vmalloc=224m sec_log=2052K@0x10000000 sec_bootfb=0x3f000000 lcd_panel_id=0 androidboot.revision=8 switch_sel=3 sysscope=0xff000000 cordon=890434554b80585fce8503799c238773 connie=GT-P5200_OPEN_EUR_99a289f6dd87309c512de6fbfde9e72f androidboot.emmc_checksum=3 androidboot.bootloader=P5200XXUBNG2 androidboot.serialno=3200a20b92309000 snd_soc_core.pmdown_time=1000 jig=0
+Bootstub: map SFI MMAP to e820 table
+add mmap: 0x00000000 0x00098000 1
+add mmap: 0x00100000 0x00580000 2
+add mmap: 0x00680000 0x00680000 1
+add mmap: 0x00d00000 0x00300000 2
+add mmap: 0x01000000 0x35ff0000 1
+add mmap: 0x36ff0000 0x0090d000 2
+add mmap: 0x378fd400 0x00100000 2
+add mmap: 0x379fd400 0x02602000 1
+add mmap: 0x3a000000 0x02200000 2
+add mmap: 0x3c200000 0x02d00000 1
+add mmap: 0x3ef00000 0x00100000 2
+add mmap: 0x3f000000 0x01000000 2
+add mmap: 0xfec00000 0x00001000 2
+add mmap: 0xfee00000 0x00001000 2
+add mmap: 0xff000000 0x01000000 2
+IMR6 start=0x3a000000 end=0x3c1fffff
+new mmap: 0x3a000000 0x02200000 2
+IMR7 start=0x00100000 end=0x0067ffff
+new mmap: 0x00100000 0x00580000 2
+Final E820 table:
+e820: 0x00000000 0x00098000 1
+e820: 0x00100000 0x00580000 2
+e820: 0x00680000 0x00680000 1
+e820: 0x00d00000 0x00300000 2
+e820: 0x01000000 0x35ff0000 1
+e820: 0x36ff0000 0x0090d000 2
+e820: 0x378fd400 0x00100000 2
+e820: 0x379fd400 0x02602000 1
+e820: 0x3a000000 0x02200000 2
+e820: 0x3c200000 0x02d00000 1
+e820: 0x3ef00000 0x00100000 2
+e820: 0x3f000000 0x01000000 2
+e820: 0xfec00000 0x00001000 2
+e820: 0xfee00000 0x00001000 2
+e820: 0xff000000 0x01000000 2
+Final mb_mmap table:
+mb_mmap: 0x00000000 0x00098000 1
+mb_mmap: 0x00100000 0x00580000 0
+mb_mmap: 0x00680000 0x00680000 1
+mb_mmap: 0x00d00000 0x00300000 0
+mb_mmap: 0x01000000 0x35ff0000 1
+mb_mmap: 0x36ff0000 0x0090d000 0
+mb_mmap: 0x378fd400 0x00100000 0
+mb_mmap: 0x379fd400 0x02602000 1
+mb_mmap: 0x3a000000 0x02200000 0
+mb_mmap: 0x3c200000 0x02d00000 1
+mb_mmap: 0x3ef00000 0x00100000 0
+mb_mmap: 0x3f000000 0x01000000 0
+mb_mmap: 0xfec00000 0x00001000 0
+mb_mmap: 0xfee00000 0x00001000 0
+mb_mmap: 0xff000000 0x01000000 0
+Using bzImage to boot
+The SBOOT WP is done!!!
+[MMC] Set write protection (boot partition)
+mmc_bootpart_poweron_wp : boot partition WP OK
+Relocating initramfs to high memory ...
+usb is connected, skip to set uart path
+0xFF00_0510 FullChipRegister: Status flag = 0x0
+0xFF10_0510 SCFabricRegister: Status flag = 0x0
+Jump to kernel 32bit entry ...0x05003c00
+[    0.289949] C0 [      swapper/0] SPID not found in kernel command line.
+[    0.629243] C1 [      swapper/0] pci 0000:00:03.1: unsupported PM cap regs version (4)
+[    0.651090] C2 [      swapper/0] PMU DRIVER BEFORE PROBE
+[    4.618137] C3 [    ia_watchdog] intel_scu_watchdog: intel_scu_watchdog: intel_scu_stop
+[    5.358468] C2 [      swapper/0] Request for hsu(64) GPIO fails
+[    5.359194] C2 [      swapper/0] Request for hsu(67) GPIO fails
+[    5.597612] C2 [      swapper/0] ehci_hcd 0000:00:06.5: can't setup
+[    5.597957] C2 [      swapper/0] ehci_hcd 0000:00:06.5: init 0000:00:06.5 fail, -19
+[    6.494682] C0 [      swapper/0] i2c_dw_pci_probe: invalid bus index 259
+[    6.500301] C0 [      swapper/0] i2c_dw_pci_probe: invalid bus index 261
+[    6.546845] C0 [      swapper/0] i2c i2c-9: sendbytes: NAK bailout.
+[    6.546884] C0 [      swapper/0] Failed to stmpe811 write, reg: 3
+[    6.781685] C1 [      swapper/0] tc35876x_vid_detect: It seems to use Intel Stand-alone Bootloader...
+[    6.937013] C0 [      swapper/0] bh1730fvc_test_device : POWER ON 0, 3
+[    6.937031] C0 [      swapper/0] bh1730fvc_test_device : slave addr : 0x29
+[    6.946871] C0 [      swapper/0] power_supply sec-fuelgauge: driver failed to report `status' property: 4294967274
+[    6.951352] C0 [    kworker/0:0] power_supply sec-fuelgauge: driver failed to report `status' property: 4294967274
+[    7.129295] C2 [      swapper/0] power_supply sec-charger: driver failed to report `power_now' property: 4294967274
+[    7.155593] C2 [    kworker/2:2] power_supply sec-charger: driver failed to report `power_now' property: 4294967274
+[    8.293507] C3 [           init] init: waitpid failed: No child processes
+[    8.294566] C3 [           init] init: /init.rc: 57: invalid command 'load_all_props'
+[    8.294695] C3 [           init] init: could not import file '/init.recovery.logd.rc' from '/init.rc'
+[    8.294887] C3 [           init] init: could not import file '/init.recovery.santos103g.rc' from '/init.rc'
+[    9.228384] C0 [        ueventd] power_supply sec-charger: driver failed to report `power_now' property: 4294967274
+[    9.250003] C0 [        ueventd] power_supply sec-fuelgauge: driver failed to report `status' property: 4294967274
+[    9.295853] C2 [           init] init: Timed out waiting for /dev/.coldboot_done
+[    9.295969] C2 [           init] init: /dev/hw_random not found
+[    9.297526] C2 [           init] init: /dev/hw_random not found
+[    9.299446] C3 [           init] fs_mgr: Cannot open file /fstab.santos103g
+[    9.299477] C3 [           init] init: unable to read fstab /fstab.santos103g: No such file or directory
+[    9.299575] C3 [           init] init: Unable to open persistent property directory "/data/property": No such file or directory
+[    9.303002] C3 [           init] init: Warning!  Service recovery needs a SELinux domain defined; please fix!
+[    9.303694] C0 [           init] init: cannot execve('/sbin/recovery'): Permission denied
+[   14.326807] C2 [           init] init: Warning!  Service recovery needs a SELinux domain defined; please fix!
+[   74.688397] C3 [           init] SysRq : Emergency Remount R/O
+[   74.789818] C2 [           init] intel_scu_watchdog: intel_scu_watchdog: watchdog_keepalive
+[   75.096589] C0 [           init] Restarting system with command 'recovery'.
+
+
+                               IA32 CPU Firmware                              
+      Copyright (C) 1999-2013, Intel Corporation. All rights reserved.
+
+      
+7[0;23r[24;75H[1K[24;1H[1mIntel(R) Atom(TM) Z2560 CPU FW 00.73 (INTELFDK)[0m8------------------------------>FOR Teewinot ONLY<-----------------------------
+******************************************************************************
+************** Customer release based on Rel 00.49 + TWN changes**************
+**************** BZ=115220 Bypass time/date check for product ****************
+****************** BZ=118523 Cold Reset on ExecuteOS failure *****************
+****** BZ=124478[TW 346-500-676] Request for logging enhancement in IAFW *****
+************* BZ=127192 Disable Active Refresh during JEDEC Init *************
+******************* BZ=none include ucode patch M013065110E ******************
+**************************** New in this code drop ***************************
+***** BZ=none Changed trace to match TWN RAMDUMP application requirement *****
+*************** BZ=none Removed UART and PTI HW output methods ***************
+******** Short circuiting the emInit when a fixed battery is detected. *******
+********************* Customization done 201308261512 MST ********************
+******************************************************************************
+[37;41m******************************INTEL CONFIDENTIAL******************************
+[0m
+0x1E, 0x20, 0x21, 
+
+ERROR:::::SPID Not Programmed, Fake data being used based on IFWI version
+
+
+
+ERROR:::::SPID FRU Not Programmed, Fake data being used based on IFWI version
+
+
+OSC_CLK3 defaults only
+0x22, 
+OEM board; Skip spidBasedPanelNdxUpdate
+0x23, 
+Forced Battery via SMIP FPO Bit 2
+0x28, 0x2A, 0x2B, in csSFIDevsEntries, HW Id 0x0019
+SFI Dev...PR3
+in csSFIGpioEntries, HW Id 0x0019
+
+SFIOEMBInit:tbl->spidTbl update
+0x2C, 0x2D, 0x2F PostCodes Done
+
+IA32 FW:       CPU v000.073/00.49; SUPP v000.073/00.49; VH: 000.081/00.51
+IA Timestamp:  2013.08.26:18.00 (INTELFDK)
+SCU FW:        ROM 177.000/B1.00; RT 033.048/21.30
+PUNIT FW:      v224.064/E0.40
+IFWI:          v249.086/F9.56
+PL:            0000010E
+Config & PCB:  OEM Platform, C, CLV+ B1, Micron (00,00) SR 4Gb 1067 1GB 
+               FHOB DW0/DW1: 00000104:00010140
+               I2C Expander: FFFFFFFC:0000000F
+               IA Options:   024020A1:00000000:03E00000:80005C00:00000101;0556
+               [OS HASH VERIFY] [EIST] [eMMC] [VALID BATT][WDT]
+
+Loading OS...
+pOsip = 1000000
+
+-->OSIP verified
+
+FA050000 FA050000
+
+FA050000 FA050000
+
+Boot path override selected OS image 0 (OS Attribute 0x00, Reboot Reason 0x00)
+FA050000 FA050000
+
+Splash disabled in GCT
+
+Splash display time: 2 ms
+-->Bootable OS image 0 found for requested type 0 (OSII attribute 0x00)
+-->Loading OS image 0 from eMMC block 0x00000032 to DRAM address 0x010FFE20
+-->Starting transfer of 0xA11 512-byte blocks to DRAM
+-->Done loading OS Image to DRAM
+-->platformConfigBuffer_pt.scuFhobDw0.osven != 0
+	-->osIndex: 0, Signed Image
+OS image 0 PASSED verify
+Booting MOS
+
+*********************************
+Starting command line:
+-init=/init pci=noearly console=ttyMFD2 console=ttyS0 console=logk0 earlyprintk=nologger loglevel=8 hsu_dma=7 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=ctp_pr1 emmc_ipanic.ipanic_part_number=1 ip=50.0.0.2:50.0.0.1::255.255.255.0::usb0:on hsu_rx_wa g_android.fastboot=1 droidboot.scratch=100
+-
+
+OSNIB.wakesrc = 0x5
+OSNIB.RR = 0x0
+
+Battery is high enough for normal boot
+3500mV > 0mV
+
+Ending command line:
+-init=/init pci=noearly console=ttyMFD2 console=ttyS0 console=logk0 earlyprintk=nologger loglevel=8 hsu_dma=7 kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=ctp_pr1 emmc_ipanic.ipanic_part_number=1 ip=50.0.0.2:50.0.0.1::255.255.255.0::usb0:on hsu_rx_wa g_android.fastboot=1 droidboot.scratch=100 androidboot.wakesrc=05 androidboot.mode=main-
+*********************************
+
+WDT aka Timer7 setup
+Warn Duration for Timer7: 00 seconds
+Start Timer7 bit 0 -> 1: 00000000000000000000000000000000
+[0;24r[24;1H[2KM
+Calling OS entry point --> 0x01101000 ...
+
+Using NEW OSHOB structure size = 176 bytes
+OSNIB size = 32 bytes OEMNIB size = 64 bytes
+0xFF00_0510 FullChipRegister: Status flag = 0x0
+0xFF10_0510 SCFabricRegister: Status flag = 0x0
+RTCSC2 = 0x11,	 RTCSC3 = 0xcf,	 RTCSC4 = 0xcf
+Watchdog Disabled! 
+usb is connected, skip to set uart path
+__stmpe811_write : fail
+MUIC: CONTROL1:0x09
+MUIC: CONTROL1:0x09
+MUIC: CONTROL2:0x3e
+MUIC: CONTROL2:0x3e
+[SCU_IPC_DEBUG] board ID: NOT_IDENTIFIED(8)
+VERSION : 0xa501
+mmc_read_ext_csd : ext_csd_rev = 0x5
+cardtype: 0x00000007
+SB_MMC_HS_52MHZ_1_8V_3V_IO
+mmc->card_caps: 0x00000311
+mmc->host_caps: 0x00000311
+!!!Enter 8 Bit mode.!!!
+clt_mmc_init: mmc->capacity = 0x1d58000
+[BOOT] RESETIRQ1=0x00 RESETIRQ2=0x00 (interrupt tree)
+[BOOT] SCU_TR=0x00020013 IA_TR=0xffffffff (oshob)
+[BOOT] RR=0x00 WD=0x00 ALARM=0x00 (osnib)
+[BOOT] WAKESRC=0x05 RESETIRQ1=0x01 RESETIRQ2=0x00 (osnib)
+
+Samsung S-Boot 4.0 for GT-P5200 (Jul 21 2014 - 17:57:55)
+
+CLT(EVT 0.0) / 1024MB / 15024MB / Rev 8 / P5200XXUBNG2
+
+pit_check_signature (PIT) valid.
+initialize_ddi_data: usable! (1:0xe)
+PARAM ENV VERSION: v1.0..
+pressed_key = 0x0
+clt_charger_init : [battery] using external charger init(3)
+STATUS1:0x3f, 2:0x41
+vbvolt=0x1, chgtyp=0x1, adc=0x1f, ret=0x1011f
+[check_cable_type] : Output of USB Charger Detection 1
+[max77693_init_charger] : attached device(0x01) :  USB
+clt_max77693_set_charger_state: chg_cnfg_02 (0x8d) -> (0x1f) -> (0x1f)
+clt_max77693_set_charger_state: chg_cnfg_03 (0x26) -> (0x00) -> (0x00)
+clt_max77693_set_charger_state: chg_cnfg_04 (0xdd) -> (0xdd) -> (0xdd)
+clt_max77693_set_charger_state: chg_cnfg_09 (0x19) -> (0x19) -> (0x19)
+set_charger_state : buck(1), chg(0), reg(0x04)
+init_fuel_gauge: Start!!
+[0] get_adc_battid() = 92
+[1] get_adc_battid() = 91
+[2] get_adc_battid() = 91
+get_adc_battid() = 91
+init_fuel_gauge: Battery type : SDI
+init_fuel_gauge: Already initialized (0x32cd, SDI type)
+STATUS1:0x3f, 2:0x41
+vbvolt=0x1, chgtyp=0x1, adc=0x1f, ret=0x1011f
+clt_charger_init : cable_type(0x01)
+set_charger_state : buck(1), chg(1), reg(0x05)
+intel_scu_ipc_cmd_oemnib : done => 0x12345674
+check_reboot_cmd: nCmd = 12345674 ... skip check_reboot_cmd
+debug level = 0x4f4c
+disable max77693 manual reset
+clt_max77693_disable_manual_reset: set max77693 MANCTRL1 val = 0x4
+clt_max77693_disable_manual_reset: read max77693 MANCTRL1 val = 0x4
+disable PMIC cod off triggered by PWRBTN#: 6
+intel_scu_ipc_cmd_oemnib : done => 0x0
+check_download: 0
+mach_board_main: recovery set!(0x80000)
+Is_lpm_boot : boot-mode saved in param = 4
+Is_lpm_boot : jig-on level = 0, ignore...
+STATUS1:0x3f, 2:0x41
+vbvolt=0x1, chgtyp=0x1, adc=0x1f, ret=0x1011f
+stat=0x1011f, adc=0x1f, chg=0x1, vbvolt=1, pinLevel=1
+fuel_gauge_read_vcell: VCELL(3550), data(0xb18c)
+fuel_gauge_read_soc: SOC(0), data(0x0000)
+check_low_battery : rb=4 jig=0
+check_low_battery : v=3550 soc=0
+skip check low battery
+scr_draw_image: draw 'logo.jpg'...
+read 'logo.jpg'(105420) completed.
+<start_checksum:355>CHECKSUM_HEADER_SECTOR :4096
+<start_checksum:357>offset:6144, size:6296
+<start_checksum:361>CHECKSUM_HEADER_INFO : NeedChecksum:0 PartNo:27
+Not Need Movinand Checksum
+Movinand Checksum Confirmation Pass
+Set debug level to low(4f4c)
+load_kernel: loading boot image from 147456..
+total size : 8671232
+pit_check_signature (RECOVERY) invalid.
+Set invalid sign flag
+if_ddi_data: succeeded. (1:0xe)
+ipc_mb opcode = 0x84, status 0x01 ostype 0x00 oper 0x00
+BOOT_MAGIC == ANDROID!
+CMDLINE LENGTH = 558
+CMDLINE = init=/init console=sec_log_buf kmemleak=off ptrace.ptrace_can_access=1 androidboot.bootmedia=sdcard androidboot.hardware=santos103g sec_debug.level=0 loglevel=0 androidboot.debug_level=0x4f4c vmalloc=224m sec_log=2052K@0x10000000 sec_bootfb=0x3f000000 lcd_panel_id=0 androidboot.revision=8 switch_sel=3 sysscope=0xff000000 cordon=f3112d05cd462f6ed42b3843b601d9e3 connie=GT-P5200_OPEN_EUR_4971786ed268a1b5d92ea96a837f7338 androidboot.emmc_checksum=3 androidboot.bootloader=P5200XXUBNG2 androidboot.serialno=3200a20b92309000 snd_soc_core.pmdown_time=1000 jig=0
+Bootstub: map SFI MMAP to e820 table
+add mmap: 0x00000000 0x00098000 1
+add mmap: 0x00100000 0x00580000 2
+add mmap: 0x00680000 0x00680000 1
+add mmap: 0x00d00000 0x00300000 2
+add mmap: 0x01000000 0x35ff0000 1
+add mmap: 0x36ff0000 0x0090d000 2
+add mmap: 0x378fd400 0x00100000 2
+add mmap: 0x379fd400 0x02602000 1
+add mmap: 0x3a000000 0x02200000 2
+add mmap: 0x3c200000 0x02d00000 1
+add mmap: 0x3ef00000 0x00100000 2
+add mmap: 0x3f000000 0x01000000 2
+add mmap: 0xfec00000 0x00001000 2
+add mmap: 0xfee00000 0x00001000 2
+add mmap: 0xff000000 0x01000000 2
+IMR6 start=0x3a000000 end=0x3c1fffff
+new mmap: 0x3a000000 0x02200000 2
+IMR7 start=0x00100000 end=0x0067ffff
+new mmap: 0x00100000 0x00580000 2
+Final E820 table:
+e820: 0x00000000 0x00098000 1
+e820: 0x00100000 0x00580000 2
+e820: 0x00680000 0x00680000 1
+e820: 0x00d00000 0x00300000 2
+e820: 0x01000000 0x35ff0000 1
+e820: 0x36ff0000 0x0090d000 2
+e820: 0x378fd400 0x00100000 2
+e820: 0x379fd400 0x02602000 1
+e820: 0x3a000000 0x02200000 2
+e820: 0x3c200000 0x02d00000 1
+e820: 0x3ef00000 0x00100000 2
+e820: 0x3f000000 0x01000000 2
+e820: 0xfec00000 0x00001000 2
+e820: 0xfee00000 0x00001000 2
+e820: 0xff000000 0x01000000 2
+Final mb_mmap table:
+mb_mmap: 0x00000000 0x00098000 1
+mb_mmap: 0x00100000 0x00580000 0
+mb_mmap: 0x00680000 0x00680000 1
+mb_mmap: 0x00d00000 0x00300000 0
+mb_mmap: 0x01000000 0x35ff0000 1
+mb_mmap: 0x36ff0000 0x0090d000 0
+mb_mmap: 0x378fd400 0x00100000 0
+mb_mmap: 0x379fd400 0x02602000 1
+mb_mmap: 0x3a000000 0x02200000 0
+mb_mmap: 0x3c200000 0x02d00000 1
+mb_mmap: 0x3ef00000 0x00100000 0
+mb_mmap: 0x3f000000 0x01000000 0
+mb_mmap: 0xfec00000 0x00001000 0
+mb_mmap: 0xfee00000 0x00001000 0
+mb_mmap: 0xff000000 0x01000000 0
+Using bzImage to boot
+The SBOOT WP is done!!!
+[MMC] Set write protection (boot partition)
+mmc_bootpart_poweron_wp : boot partition WP OK
+Relocating initramfs to high memory ...
+usb is connected, skip to set uart path
+0xFF00_0510 FullChipRegister: Status flag = 0x0
+0xFF10_0510 SCFabricRegister: Status flag = 0x0
+Jump to kernel 32bit entry ...0x05003c00
